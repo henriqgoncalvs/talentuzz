@@ -4,6 +4,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Link, LinkP } from './link';
 
 const meta: Meta = {
+  title: 'Components/Link',
   component: Link,
 };
 

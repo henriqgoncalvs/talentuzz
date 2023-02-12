@@ -9,6 +9,7 @@ import { Button } from '@/components/button';
 import { InputField, InputFieldP } from './input-field';
 
 const meta: Meta = {
+  title: 'Components/InputField',
   component: InputField,
 };
 
