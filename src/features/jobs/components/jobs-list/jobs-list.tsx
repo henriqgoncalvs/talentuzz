@@ -37,11 +37,7 @@ const getTableColumns = (
     {
       title: '',
       field: 'id',
-      render: ({
-        entry: { id },
-      }: {
-        entry: { id: string };
-      }) => {
+      render: ({ entry: { id } }: { entry: { id: string } }) => {
         return (
           <Link
             href={
@@ -66,10 +62,7 @@ export const JobsList = ({
   organizationId,
   type,
 }: JobsListProps) => {
-  const tableColumns = getTableColumns(
-    organizationId,
-    type
-  );
+  const tableColumns = getTableColumns(organizationId, type);
 
   return (
     <Box data-testid="jobs-list">

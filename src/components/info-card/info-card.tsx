@@ -1,9 +1,4 @@
-import {
-  Box,
-  Heading,
-  Stack,
-  Text,
-} from '@chakra-ui/react';
+import { Box, Heading, Stack, Text } from '@chakra-ui/react';
 
 export type InfoCardP = {
   label: string;
@@ -12,12 +7,7 @@ export type InfoCardP = {
 
 export const InfoCard = ({ label, value }: InfoCardP) => {
   return (
-    <Box
-      p="4"
-      bg="white"
-      borderRadius="lg"
-      boxShadow="sm"
-    >
+    <Box p="4" bg="white" borderRadius="lg" boxShadow="sm">
       <Stack>
         <Text fontSize="sm" color="muted">
           {label}

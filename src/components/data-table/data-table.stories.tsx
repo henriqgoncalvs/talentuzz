@@ -13,9 +13,7 @@ export default meta;
 
 const data = testData.jobs.slice(0, 6);
 
-const columns: DataTableProps<
-  (typeof data)[0]
->['columns'] = [
+const columns: DataTableProps<(typeof data)[0]>['columns'] = [
   {
     title: 'Position',
     field: 'position',

@@ -10,13 +10,11 @@ import { Seo } from '@/components/seo';
 import { JobsList, Job } from '@/features/jobs';
 import { OrganizationInfo } from '@/features/organizations';
 import { PublicLayout } from '@/layouts/public-layout';
-import {
-  getJobs,
-  getOrganization,
-} from '@/testing/test-data';
+import { getJobs, getOrganization } from '@/testing/test-data';
 
-type PublicOrganizationPageProps =
-  InferGetServerSidePropsType<typeof getServerSideProps>;
+type PublicOrganizationPageProps = InferGetServerSidePropsType<
+  typeof getServerSideProps
+>;
 
 const PublicOrganizationPage = ({
   organization,

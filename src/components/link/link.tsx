@@ -44,11 +44,7 @@ export const Link = ({
       passHref
       legacyBehavior
     >
-      <Button
-        leftIcon={icon}
-        as="a"
-        {...variants[variant]}
-      >
+      <Button leftIcon={icon} as="a" {...variants[variant]}>
         {children}
       </Button>
     </NextLink>

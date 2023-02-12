@@ -23,10 +23,7 @@ export const OrganizationInfo = ({
           w={{ base: 'full', md: 'auto' }}
           direction={{ base: 'column', md: 'row' }}
         >
-          <InfoCard
-            label="Email"
-            value={organization.email}
-          />
+          <InfoCard label="Email" value={organization.email} />
           <InfoCard
             label="Phone Number"
             value={organization.phone}

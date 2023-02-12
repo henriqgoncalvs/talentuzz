@@ -19,9 +19,7 @@ export default function App({
   const getLayout =
     Component.getLayout ?? ((component) => component);
 
-  const pageContent = getLayout(
-    <Component {...pageProps} />
-  );
+  const pageContent = getLayout(<Component {...pageProps} />);
 
   return <AppProvider>{pageContent}</AppProvider>;
 }

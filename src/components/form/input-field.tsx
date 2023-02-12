@@ -6,10 +6,7 @@ import {
   Input,
   Textarea,
 } from '@chakra-ui/react';
-import {
-  FieldError,
-  UseFormRegister,
-} from 'react-hook-form';
+import { FieldError, UseFormRegister } from 'react-hook-form';
 
 export type InputFieldP = {
   type?: 'text' | 'email' | 'password' | 'textarea';
@@ -21,12 +18,7 @@ export type InputFieldP = {
 
 export const InputField = forwardRef(
   (props: InputFieldP, ref) => {
-    const {
-      type = 'text',
-      label,
-      error,
-      ...inputProps
-    } = props;
+    const { type = 'text', label, error, ...inputProps } = props;
 
     return (
       <FormControl>

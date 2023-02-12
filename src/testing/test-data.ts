@@ -116,25 +116,18 @@ export const testData = {
 };
 
 const delayedFn =
-  <T, A extends any[]>(
-    fn: (...args: A) => T,
-    ms: number
-  ) =>
+  <T, A extends any[]>(fn: (...args: A) => T, ms: number) =>
   (...args: A) => {
     return new Promise<T>((resolve) =>
       setTimeout(() => resolve(fn(...args)), ms)
     );
   };
 
-export const getUser = delayedFn(
-  () => testData.users[0],
-  100
-);
+export const getUser = delayedFn(() => testData.users[0], 100);
 
 export const getOrganization = delayedFn(
   (id: string) =>
-    testData.organizations.find((o) => o.id === id) ||
-    null,
+    testData.organizations.find((o) => o.id === id) || null,
   500
 );
 
@@ -147,15 +140,12 @@ export const getJobs = delayedFn(
 );
 
 export const getJob = delayedFn(
-  (id: string) =>
-    testData.jobs.find((j) => j.id === id) || null,
+  (id: string) => testData.jobs.find((j) => j.id === id) || null,
   500
 );
 
 const useTestData = <T>(promise: Promise<T>) => {
-  const [testData, setTestData] = useState<T | null>(
-    null
-  );
+  const [testData, setTestData] = useState<T | null>(null);
 
   useEffect(() => {
     if (!testData) {
@@ -174,5 +164,4 @@ export const useOrganization = (id: string) =>
 export const useJobs = (organizationId: string) =>
   useTestData(getJobs(organizationId));
 
-export const useJob = (id: string) =>
-  useTestData(getJob(id));
+export const useJob = (id: string) => useTestData(getJob(id));

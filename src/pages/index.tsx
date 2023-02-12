@@ -1,9 +1,4 @@
-import {
-  Center,
-  Heading,
-  Text,
-  VStack,
-} from '@chakra-ui/react';
+import { Center, Heading, Text, VStack } from '@chakra-ui/react';
 
 import { Link } from '@/components/link';
 import { Seo } from '@/components/seo';

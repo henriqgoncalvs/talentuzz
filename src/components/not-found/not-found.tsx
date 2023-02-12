@@ -1,9 +1,5 @@
 import { NotAllowedIcon } from '@chakra-ui/icons';
-import {
-  Center,
-  Heading,
-  VStack,
-} from '@chakra-ui/react';
+import { Center, Heading, VStack } from '@chakra-ui/react';
 
 import { Link } from '../link';
 

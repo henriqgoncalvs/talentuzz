@@ -37,12 +37,7 @@ export const DataTable = <Entry extends Entity>({
 
   if (data?.length === 0) {
     return (
-      <Center
-        h="56"
-        p="4"
-        bg="gray.100"
-        borderRadius="md"
-      >
+      <Center h="56" p="4" bg="gray.100" borderRadius="md">
         No Data
       </Center>
     );
@@ -73,10 +68,7 @@ export const DataTable = <Entry extends Entity>({
                 key={entry.id || entryIndex}
               >
                 {columns.map(
-                  (
-                    { field, title, render },
-                    columnIndex
-                  ) => (
+                  ({ field, title, render }, columnIndex) => (
                     <Td key={title + columnIndex}>
                       <Text>
                         {render

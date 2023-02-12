@@ -23,8 +23,7 @@ const config: StorybookConfig = {
   },
   webpackFinal: async (config) => {
     if (config && config.resolve) {
-      config.resolve.plugins =
-        config.resolve.plugins || [];
+      config.resolve.plugins = config.resolve.plugins || [];
       config.resolve.plugins.push(
         new TsconfigPathsPlugin({
           configFile: path.resolve(

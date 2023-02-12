@@ -1,10 +1,5 @@
 import { ViewIcon } from '@chakra-ui/icons';
-import {
-  Heading,
-  HStack,
-  VStack,
-  Text,
-} from '@chakra-ui/react';
+import { Heading, HStack, VStack, Text } from '@chakra-ui/react';
 
 import { Content } from '@/components/content';
 import { Link } from '@/components/link';

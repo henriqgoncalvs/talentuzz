@@ -1,8 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import {
-  userEvent,
-  screen,
-} from '@storybook/testing-library';
+import { userEvent, screen } from '@storybook/testing-library';
 
 import { Button } from '@/components/button';
 
@@ -61,11 +58,7 @@ export const FormWithError: typeof Default = {
   render: () => (
     <form>
       <InputField label="Name" name="name" required />
-      <InputField
-        label="Password"
-        name="password"
-        required
-      />
+      <InputField label="Password" name="password" required />
       <Button type="submit">Submit</Button>
     </form>
   ),

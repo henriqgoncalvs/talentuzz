@@ -1,9 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import {
-  PublicLayout,
-  PublicLayoutP,
-} from './public-layout';
+import { PublicLayout, PublicLayoutP } from './public-layout';
 
 const meta: Meta = {
   title: 'Layouts/PublicLayout',
