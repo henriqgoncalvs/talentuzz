@@ -38,7 +38,12 @@ export const Link = ({
   icon,
 }: LinkP) => {
   return (
-    <NextLink href={href} shallow={shallow} passHref>
+    <NextLink
+      href={href}
+      shallow={shallow}
+      passHref
+      legacyBehavior
+    >
       <Button
         leftIcon={icon}
         as="a"
