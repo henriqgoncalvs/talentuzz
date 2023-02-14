@@ -1,5 +1,7 @@
 import { IS_SERVER } from '@/config/constants';
 
+import { seedDb } from './seed-db';
+
 const initializeMocks = async () => {
   if (IS_SERVER) {
     const { server } = await require('./server');
@@ -7,6 +9,7 @@ const initializeMocks = async () => {
   } else {
     const { worker } = await require('./browser');
     worker.start();
+    seedDb();
   }
 };
 
