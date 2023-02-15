@@ -19,16 +19,23 @@ const loginHandler = rest.post(
   `${API_URL}/auth/login`,
   async (req, res, ctx) => {
     const credentials: LoginData = await req.json();
-    const { user, jwt } = authenticate(credentials);
 
-    return res(
-      ctx.delay(300),
-      ctx.cookie(AUTH_COOKIE, jwt, {
-        path: '/',
-        httpOnly: true,
-      }),
-      ctx.json({ user })
-    );
+    try {
+      const { user, jwt } = authenticate(credentials);
+
+      console.log({ user, jwt });
+
+      return res(
+        ctx.delay(300),
+        ctx.cookie(AUTH_COOKIE, jwt, {
+          path: '/',
+          httpOnly: true,
+        }),
+        ctx.json({ user })
+      );
+    } catch (e) {
+      return res(ctx.delay(300), ctx.status(401, e as string));
+    }
   }
 );
 
@@ -40,8 +47,6 @@ const logoutHandler = rest.post(
       ctx.cookie(AUTH_COOKIE, '', {
         path: '/',
         httpOnly: true,
-        // TODO remove the cookie
-        // expires: new Date(new Date().setDate(-1)),
       }),
       ctx.json({ success: true })
     );

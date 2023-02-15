@@ -29,7 +29,7 @@ export const authenticate = ({ email, password }: LoginData) => {
     },
   });
 
-  if (user?.password === password) {
+  if (user && password && user?.password === password) {
     const sanitizedUser = sanitizeUser(user);
     const encodedToken = AUTH_TOKEN;
     return { user: sanitizedUser, jwt: encodedToken };
