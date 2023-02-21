@@ -1,5 +1,3 @@
-// components:
+export * from './api/get-organization';
 export * from './components/organization-info';
-
-// types:
 export * from './types';

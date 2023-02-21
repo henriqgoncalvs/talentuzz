@@ -4,14 +4,13 @@ import { ReactElement } from 'react';
 import { Loading } from '@/components/loading';
 import { NotFound } from '@/components/not-found';
 import { Seo } from '@/components/seo';
-import { DashboardJobInfo } from '@/features/jobs';
+import { DashboardJobInfo, useJob } from '@/features/jobs';
 import { DashboardLayout } from '@/layouts/dashboard-layout';
-import { useJob } from '@/testing/test-data';
 
 const DashboardJobPage = () => {
   const router = useRouter();
   const jobId = router.query.jobId as string;
-  const job = useJob(jobId);
+  const job = useJob({ jobId });
 
   if (job.isLoading) {
     return <Loading />;

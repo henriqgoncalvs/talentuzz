@@ -7,10 +7,12 @@ import { ReactElement } from 'react';
 
 import { NotFound } from '@/components/not-found';
 import { Seo } from '@/components/seo';
-import { JobsList, Job } from '@/features/jobs';
-import { OrganizationInfo } from '@/features/organizations';
+import { getJobs, Job, JobsList } from '@/features/jobs';
+import {
+  getOrganization,
+  OrganizationInfo,
+} from '@/features/organizations';
 import { PublicLayout } from '@/layouts/public-layout';
-import { getJobs, getOrganization } from '@/testing/test-data';
 
 type PublicOrganizationPageProps = InferGetServerSidePropsType<
   typeof getServerSideProps
@@ -24,7 +26,7 @@ const PublicOrganizationPage = ({
 
   return (
     <>
-      <Seo title="organization.name" />
+      <Seo title={organization.name} />
       <Stack
         spacing="4"
         w="full"
@@ -61,8 +63,12 @@ export const getServerSideProps = async ({
   const organizationId = params?.organizationId as string;
 
   const [organization, jobs] = await Promise.all([
-    getOrganization(organizationId).catch(() => null),
-    getJobs(organizationId).catch(() => [] as Job[]),
+    getOrganization({ organizationId }).catch(() => null),
+    getJobs({
+      params: {
+        organizationId,
+      },
+    }).catch(() => [] as Job[]),
   ]);
 
   return {

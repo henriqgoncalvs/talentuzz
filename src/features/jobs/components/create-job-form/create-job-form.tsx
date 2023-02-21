@@ -1,7 +1,11 @@
 import { Box, Stack } from '@chakra-ui/react';
+import { useForm } from 'react-hook-form';
 
 import { Button } from '@/components/button';
 import { InputField } from '@/components/form';
+
+import { useCreateJob } from '../../api/create-job';
+import { CreateJobData } from '../../types';
 
 export type CreateJobFormProps = {
   onSuccess: () => void;
@@ -10,27 +14,57 @@ export type CreateJobFormProps = {
 export const CreateJobForm = ({
   onSuccess,
 }: CreateJobFormProps) => {
-  const onSubmit = async () => {
-    onSuccess();
+  const createJob = useCreateJob({ onSuccess });
+
+  const { register, handleSubmit, formState } =
+    useForm<CreateJobData>();
+
+  const onSubmit = (data: CreateJobData) => {
+    createJob.submit({ data });
   };
 
   return (
     <Box w="full">
       <Stack
         as="form"
-        onSubmit={() => onSubmit()}
+        onSubmit={() => handleSubmit(onSubmit)}
         w="full"
         spacing="8"
       >
-        <InputField label="Position" />
-        <InputField label="Department" />
-        <InputField label="Location" />
+        <InputField
+          label="Position"
+          {...register('position', {
+            required: 'Required',
+          })}
+          error={formState.errors['position']}
+        />
+        <InputField
+          label="Department"
+          {...register('department', {
+            required: 'Required',
+          })}
+          error={formState.errors['department']}
+        />
+        <InputField
+          label="Location"
+          {...register('location', {
+            required: 'Required',
+          })}
+          error={formState.errors['location']}
+        />
 
-        <InputField type="textarea" label="Info" />
+        <InputField
+          type="textarea"
+          label="Info"
+          {...register('info', {
+            required: 'Required',
+          })}
+          error={formState.errors['info']}
+        />
 
         <Button
-          isDisabled={false}
-          isLoading={false}
+          isDisabled={createJob.isLoading}
+          isLoading={createJob.isLoading}
           type="submit"
         >
           Create

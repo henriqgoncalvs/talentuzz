@@ -4,6 +4,19 @@ import { API_URL } from '@/config/constants';
 
 import { db } from '../db';
 
+const getOrganizationsHandler = rest.get(
+  `${API_URL}/organizations`,
+  (req, res, ctx) => {
+    const organizations = db.organization.getAll();
+
+    return res(
+      ctx.delay(300),
+      ctx.status(200),
+      ctx.json(organizations)
+    );
+  }
+);
+
 const getOrganizationHandler = rest.get(
   `${API_URL}/organizations/:organizationId`,
   (req, res, ctx) => {
@@ -29,4 +42,7 @@ const getOrganizationHandler = rest.get(
   }
 );
 
-export const organizationsHandlers = [getOrganizationHandler];
+export const organizationsHandlers = [
+  getOrganizationsHandler,
+  getOrganizationHandler,
+];
