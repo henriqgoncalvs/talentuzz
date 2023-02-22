@@ -39,7 +39,7 @@ const Navbar = () => {
         <Flex justify="space-between">
           <HStack>
             <Link variant="solid" href="/">
-              Jobs App
+              Talentuzz
             </Link>
             <HStack spacing="1">
               <Link
