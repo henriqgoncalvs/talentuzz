@@ -4,6 +4,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { ReactNode } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 
+import { Notifications } from '@/components/notifications';
 import { theme } from '@/config/theme';
 import { queryClient } from '@/lib/react-query';
 
@@ -18,6 +19,7 @@ export const AppProvider = ({ children }: AppProviderProps) => (
       onError={console.error}
     >
       <GlobalStyle />
+      <Notifications />
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={false} />
         {children}

@@ -46,6 +46,7 @@ specifiers:
   storybook: ^7.0.0-beta.46
   tsconfig-paths-webpack-plugin: ^4.0.0
   typescript: 4.9.5
+  zustand: ^4.3.3
 
 dependencies:
   '@chakra-ui/icons': 2.0.17_n3dxrjldmk5gnycgnw7noyo5tu
@@ -67,6 +68,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-error-boundary: 3.1.4_react@18.2.0
   react-hook-form: 7.43.1_react@18.2.0
+  zustand: 4.3.3_react@18.2.0
 
 devDependencies:
   '@chakra-ui/storybook-addon': 4.0.16_n3wccb2ckaylummhlu6iouqeym
@@ -12192,3 +12194,19 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+
+  /zustand/4.3.3_react@18.2.0:
+    resolution: {integrity: sha512-x2jXq8S0kfLGNwGh87nhRfEc2eZy37tSatpSoSIN+O6HIaBhgQHSONV/F9VNrNcBcKQu/E80K1DeHDYQC/zCrQ==}
+    engines: {node: '>=12.7.0'}
+    peerDependencies:
+      immer: '>=9.0'
+      react: '>=16.8'
+    peerDependenciesMeta:
+      immer:
+        optional: true
+      react:
+        optional: true
+    dependencies:
+      react: 18.2.0
+      use-sync-external-store: 1.2.0_react@18.2.0
+    dev: false

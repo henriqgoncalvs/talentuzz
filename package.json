@@ -33,7 +33,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-error-boundary": "^3.1.4",
-    "react-hook-form": "^7.43.1"
+    "react-hook-form": "^7.43.1",
+    "zustand": "^4.3.3"
   },
   "devDependencies": {
     "@chakra-ui/storybook-addon": "^4.0.16",
