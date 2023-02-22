@@ -27,7 +27,7 @@ export const CreateJobForm = ({
     <Box w="full">
       <Stack
         as="form"
-        onSubmit={() => handleSubmit(onSubmit)}
+        onSubmit={handleSubmit(onSubmit)}
         w="full"
         spacing="8"
       >
