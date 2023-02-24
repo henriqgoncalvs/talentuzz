@@ -10,8 +10,10 @@ module.exports = {
     'plugin:storybook/recommended',
     'next/core-web-vitals',
     'plugin:react/jsx-runtime',
+    'plugin:cypress/recommended',
     'prettier',
   ],
+  plugins: ['cypress'],
   rules: {
     'no-restricted-imports': [
       'error',
@@ -41,13 +43,11 @@ module.exports = {
       },
     ],
     '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
   },
   overrides: [
     {
-      files: [
-        '*.test.{ts,tsx}',
-        'src/testing/**/*.{ts,tsx}',
-      ],
+      files: ['*.test.{ts,tsx}', 'src/testing/**/*.{ts,tsx}'],
       rules: {
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/ban-ts-comment': 'off',
