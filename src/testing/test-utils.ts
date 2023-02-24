@@ -19,6 +19,15 @@ export const appRender = (ui: ReactElement) => {
   });
 };
 
+export const appRenderWithUserEvent = (ui: ReactElement) => {
+  return {
+    user: userEvent.setup(),
+    ...render(ui, {
+      wrapper: AppProvider,
+    }),
+  };
+};
+
 // checks all table cells and their values
 export const checkTableValues = <T extends Entity>({
   container,

@@ -18,7 +18,7 @@ jest.mock('next/router', () => ({
   useRouter: () => router,
 }));
 
-describe('Dashboard Job Page', () => {
+describe('#PAGE - Dashboard Job Page', () => {
   it('should render all the job details', async () => {
     appRender(<DashboardJobPage />);
 

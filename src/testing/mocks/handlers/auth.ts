@@ -23,8 +23,6 @@ const loginHandler = rest.post(
     try {
       const { user, jwt } = authenticate(credentials);
 
-      console.log({ user, jwt });
-
       return res(
         ctx.delay(300),
         ctx.cookie(AUTH_COOKIE, jwt, {
