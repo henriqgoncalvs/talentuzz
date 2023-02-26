@@ -8,23 +8,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7.9.0
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: '14'
+          cache: 'pnpm'
       - run: mv .env.example .env
-      - run: npm install
-      - run: npm run test
-      - run: npm run lint
-      - run: npm run format:check
-      - run: npm run types:check
-
+      - run: pnpm i --frozen-lockfile
+      - run: pnpm test
+      - run: pnpm lint
+      - run: pnpm format:check
+      - run: pnpm types:check
   e2e:
     name: E2E tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7.9.0
       - run: mv .env.example .env
       - uses: cypress-io/github-action@v4
         with:
-          build: npm run build
-          start: npm run start
+          build: pnpm build
+          start: pnpm start
