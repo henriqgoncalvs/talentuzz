@@ -36,7 +36,7 @@ jobs:
           start: pnpm start
   deploy:
     name: Deploy to Vercel
-    environment: PROD
+    environment: Production
     runs-on: ubuntu-latest
     needs: [code-checks, e2e]
     if: github.repository_owner == 'hnqg'
@@ -61,6 +61,7 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
           scope: ${{ secrets.VERCEL_ORG_ID}}
           working-directory: ./
+          alias-domains: pr-{{PR_NUMBER}}.talentuzz.hnqg.io
       - name: update deployment status
         uses: bobheadxi/deployments@v1
         if: always()
