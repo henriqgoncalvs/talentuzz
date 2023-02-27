@@ -9,7 +9,9 @@ const LandingPage = () => {
       <Seo title="Talentuzz" />
       <Center flexDirection="column" h="full">
         <VStack maxW="3xl" spacing="8">
-          <Heading size="3xl">Talentuzz</Heading>
+          <Heading size="3xl">
+            Talentuzz - Preview Deploy
+          </Heading>
           <Text
             fontSize={{ base: 'lg', md: 'xl' }}
             maxW="2xl"
