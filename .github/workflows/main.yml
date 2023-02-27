@@ -53,15 +53,29 @@ jobs:
           env: ${{ fromJSON('["Production", "Preview"]')[github.ref != 'refs/heads/main'] }}
       - uses: actions/checkout@v3
       - run: mv .env.example .env
-      - uses: amondnet/vercel-action@v25
+
+      - name: deploy to vercel prod
+        if: github.ref_name == 'main'
+        uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-args: ${{ fromJSON('["--prod", ""]')[github.ref != 'refs/heads/main'] }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
+          scope: ${{ secrets.VERCEL_ORG_ID}}
+          vercel-args: '--prod'
+          working-directory: ./
+
+      - name: deploy to vercel preview
+        if: github.ref_name != 'main'
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
           scope: ${{ secrets.VERCEL_ORG_ID}}
           working-directory: ./
           alias-domains: pr-{{PR_NUMBER}}.talentuzz.hnqg.io
+
       - name: update deployment status
         uses: bobheadxi/deployments@v1
         if: always()
