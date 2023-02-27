@@ -7,6 +7,10 @@ import { API_MOCKING } from '@/config/constants';
 import { MSWWrapperProps } from '@/lib/msw';
 import { AppProvider } from '@/providers/app';
 
+if (API_MOCKING) {
+  await import('@/testing/mocks/initialize');
+}
+
 const MSWWrapper = dynamic<MSWWrapperProps>(() =>
   import('@/lib/msw').then(({ MSWWrapper }) => MSWWrapper)
 );
