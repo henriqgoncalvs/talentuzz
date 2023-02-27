@@ -2,9 +2,9 @@ import { IS_SERVER } from '@/config/constants';
 
 import { seedDb } from './seed-db';
 
-const initializeMocks = async () => {
+const initializeMocks = () => {
   if (IS_SERVER) {
-    const { server } = await import('./server');
+    const { server } = require('./server');
     server.listen();
   } else {
     const { worker } = require('./browser');

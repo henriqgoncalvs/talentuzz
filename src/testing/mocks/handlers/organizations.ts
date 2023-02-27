@@ -34,7 +34,11 @@ const getOrganizationHandler = rest.get(
       );
     }
 
-    return res(ctx.status(200), ctx.json(organization));
+    return res(
+      ctx.delay(300),
+      ctx.status(200),
+      ctx.json(organization)
+    );
   }
 );
 
