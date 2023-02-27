@@ -75,7 +75,7 @@ jobs:
           scope: ${{ secrets.VERCEL_ORG_ID}}
           working-directory: ./
           alias-domains: |
-            "pr-${PR}.talentuzz.hnqg.io"
+            pr-{{PR}}.talentuzz.hnqg.io
 
       - name: update deployment status
         uses: bobheadxi/deployments@v1
