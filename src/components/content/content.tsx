@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 
 export type ContentP = {
   children: string;
@@ -6,8 +6,10 @@ export type ContentP = {
 
 export const Content = ({ children }: ContentP) => {
   return (
-    <Box lineHeight="7" letterSpacing="wide" my="4">
-      {children}
+    <Box my="4">
+      <Text lineHeight="7" letterSpacing="wide">
+        {children}
+      </Text>
     </Box>
   );
 };
