@@ -74,7 +74,8 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
           scope: ${{ secrets.VERCEL_ORG_ID}}
           working-directory: ./
-          alias-domains: 'pr-${{ github.event.number }}.talentuzz.hnqg.io'
+          alias-domains: |
+            "pr-${{ github.event.pull_request.number }}.talentuzz.hnqg.io"
 
       - name: update deployment status
         uses: bobheadxi/deployments@v1
