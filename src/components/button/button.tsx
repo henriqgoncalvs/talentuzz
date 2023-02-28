@@ -1,4 +1,7 @@
-import { Button as ChakraButton } from '@chakra-ui/react';
+import {
+  Button as ChakraButton,
+  forwardRef,
+} from '@chakra-ui/react';
 import { MouseEventHandler, ReactNode } from 'react';
 
 const variants = {
@@ -25,23 +28,29 @@ export type ButtonP = {
   isDisabled?: boolean;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   icon?: JSX.Element;
-};
+} & Omit<React.ComponentProps<typeof ChakraButton>, 'variant'>;
 
-export const Button = ({
-  variant = 'solid',
-  type = 'button',
-  children,
-  icon,
-  ...props
-}: ButtonP) => {
-  return (
-    <ChakraButton
-      {...variants[variant]}
-      {...props}
-      type={type}
-      leftIcon={icon}
-    >
-      {children}
-    </ChakraButton>
-  );
-};
+export const Button = forwardRef(
+  (
+    {
+      variant = 'solid',
+      type = 'button',
+      children,
+      icon,
+      ...props
+    }: ButtonP,
+    ref
+  ) => {
+    return (
+      <ChakraButton
+        {...variants[variant]}
+        {...props}
+        type={type}
+        leftIcon={icon}
+        ref={ref}
+      >
+        {children}
+      </ChakraButton>
+    );
+  }
+);

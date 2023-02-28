@@ -5,7 +5,7 @@ import { LoginForm } from '@/features/auth';
 import { AuthLayout, AuthLayoutProps } from './auth-layout';
 
 const meta: Meta = {
-  title: 'Layouts/DashboardLayout',
+  title: 'Layouts/AuthLayout',
   component: AuthLayout,
 };
 
