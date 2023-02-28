@@ -91,6 +91,74 @@ describe('dashboard', () => {
     cy.findByText(/job created/i).should('exist');
   });
 
+  it('should edit a job', () => {
+    cy.url().should(
+      'equal',
+      'http://localhost:3000/dashboard/jobs'
+    );
+
+    cy.findByRole('row', {
+      name: new RegExp(
+        `${job.position} ${job.department} ${job.location} View`,
+        'i'
+      ),
+    }).within(() => {
+      cy.findByRole('link', {
+        name: /edit/i,
+      }).click();
+    });
+
+    cy.url().should(
+      'equal',
+      `http://localhost:3000/dashboard/jobs/edit/${job.id}`
+    );
+
+    const jobUpdateData = {
+      position: 'New Position',
+      location: 'New Location',
+      department: 'New Department',
+      info: 'New Info',
+    };
+
+    cy.findByRole('textbox', {
+      name: /position/i,
+    })
+      .clear()
+      .type(jobUpdateData.position);
+
+    cy.findByRole('textbox', {
+      name: /department/i,
+    })
+      .clear()
+      .type(jobUpdateData.department);
+
+    cy.findByRole('textbox', {
+      name: /location/i,
+    })
+      .clear()
+      .type(jobUpdateData.location);
+
+    cy.findByRole('textbox', {
+      name: /info/i,
+    })
+      .clear()
+      .type(jobUpdateData.info);
+
+    cy.findByRole('button', {
+      name: /Edit/i,
+    }).click();
+
+    cy.findByText(/job edited!/i).should('exist');
+
+    // Check if the job is updated in the table
+    cy.findByRole('row', {
+      name: new RegExp(
+        `${jobUpdateData.position} ${jobUpdateData.department} ${jobUpdateData.location} View`,
+        'i'
+      ),
+    });
+  });
+
   it('should log out from the dashboard', () => {
     cy.url().should(
       'equal',
