@@ -52,7 +52,7 @@ describe('#PAGE - DashboardEditJobPage', () => {
     });
 
     const submitButton = screen.getByRole('button', {
-      name: 'Update',
+      name: 'Edit',
     });
 
     // Check if the form is filled with the job data

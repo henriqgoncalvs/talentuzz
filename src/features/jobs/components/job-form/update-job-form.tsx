@@ -87,7 +87,7 @@ export const UpdateJobForm = ({
           type="submit"
           icon={<EditIcon />}
         >
-          Update
+          Edit
         </Button>
       </Stack>
     </Box>
