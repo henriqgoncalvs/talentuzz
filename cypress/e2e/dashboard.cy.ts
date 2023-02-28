@@ -3,6 +3,7 @@ import { testData } from '../../src/testing/test-data';
 const user = testData.users[0];
 
 const job = testData.jobs[0];
+const jobToBeDeleted = testData.jobs[1];
 
 describe('dashboard', () => {
   it('should authenticate into the dashboard', () => {
@@ -157,6 +158,42 @@ describe('dashboard', () => {
         'i'
       ),
     });
+  });
+
+  it('should delete a job', () => {
+    cy.url().should(
+      'equal',
+      'http://localhost:3000/dashboard/jobs'
+    );
+
+    cy.findByRole('row', {
+      name: new RegExp(
+        `${jobToBeDeleted.position} ${jobToBeDeleted.department} ${jobToBeDeleted.location} View`,
+        'i'
+      ),
+    }).within(() => {
+      cy.findByRole('button', {
+        name: /delete/i,
+      }).click();
+    });
+
+    cy.findByRole('alertdialog').within(() => {
+      cy.findByRole('button', {
+        name: /delete/i,
+      }).click();
+    });
+
+    cy.findByText(/job deleted!/i).should('exist');
+
+    cy.findByRole('alertdialog').should('not.exist');
+
+    // Check if the job is deleted from the table
+    cy.findByRole('row', {
+      name: new RegExp(
+        `${jobToBeDeleted.position} ${jobToBeDeleted.department} ${jobToBeDeleted.location} View`,
+        'i'
+      ),
+    }).should('not.exist');
   });
 
   it('should log out from the dashboard', () => {
