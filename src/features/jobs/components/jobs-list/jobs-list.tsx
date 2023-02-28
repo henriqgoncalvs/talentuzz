@@ -1,3 +1,4 @@
+import { EditIcon } from '@chakra-ui/icons';
 import { Box } from '@chakra-ui/react';
 
 import {
@@ -47,6 +48,21 @@ const getTableColumns = (
             }
           >
             View
+          </Link>
+        );
+      },
+    },
+    {
+      title: '',
+      field: 'id',
+      show: type === 'dashboard',
+      render: ({ entry: { id } }: { entry: { id: string } }) => {
+        return (
+          <Link
+            href={`/dashboard/jobs/edit/${id}`}
+            icon={<EditIcon />}
+          >
+            Edit
           </Link>
         );
       },

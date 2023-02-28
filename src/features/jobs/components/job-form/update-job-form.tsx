@@ -1,27 +1,42 @@
+import { EditIcon } from '@chakra-ui/icons';
 import { Box, Stack } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
 
 import { Button } from '@/components/button';
 import { InputField } from '@/components/form';
+import { Loading } from '@/components/loading';
+import { NotFound } from '@/components/not-found';
 
-import { useCreateJob } from '../../api/create-job';
-import { CreateJobData } from '../../types';
+import { useJob } from '../../api/get-job';
+import { useUpdateJob } from '../../api/update-job';
+import { UpdateJobData } from '../../types';
 
-export type CreateJobFormProps = {
+type JobFormProps = {
+  jobId: string;
   onSuccess: () => void;
 };
 
-export const CreateJobForm = ({
+export const UpdateJobForm = ({
   onSuccess,
-}: CreateJobFormProps) => {
-  const createJob = useCreateJob({ onSuccess });
+  jobId,
+}: JobFormProps) => {
+  const job = useJob({ jobId });
+  const updateJob = useUpdateJob({ onSuccess });
 
   const { register, handleSubmit, formState } =
-    useForm<CreateJobData>();
+    useForm<UpdateJobData>();
 
-  const onSubmit = (data: CreateJobData) => {
-    createJob.submit({ data });
+  const onSubmit = (data: UpdateJobData) => {
+    updateJob.submit({ data, jobId });
   };
+
+  if (job.isLoading) {
+    return <Loading />;
+  }
+
+  if (!job.data) {
+    return <NotFound />;
+  }
 
   return (
     <Box w="full">
@@ -35,6 +50,7 @@ export const CreateJobForm = ({
           label="Position"
           {...register('position', {
             required: 'Required',
+            value: job.data.position,
           })}
           error={formState.errors['position']}
         />
@@ -42,6 +58,7 @@ export const CreateJobForm = ({
           label="Department"
           {...register('department', {
             required: 'Required',
+            value: job.data.department,
           })}
           error={formState.errors['department']}
         />
@@ -49,6 +66,7 @@ export const CreateJobForm = ({
           label="Location"
           {...register('location', {
             required: 'Required',
+            value: job.data.location,
           })}
           error={formState.errors['location']}
         />
@@ -58,16 +76,18 @@ export const CreateJobForm = ({
           label="Info"
           {...register('info', {
             required: 'Required',
+            value: job.data.info,
           })}
           error={formState.errors['info']}
         />
 
         <Button
-          isDisabled={createJob.isLoading}
-          isLoading={createJob.isLoading}
+          isDisabled={updateJob.isLoading}
+          isLoading={updateJob.isLoading}
           type="submit"
+          icon={<EditIcon />}
         >
-          Create
+          Update
         </Button>
       </Stack>
     </Box>
