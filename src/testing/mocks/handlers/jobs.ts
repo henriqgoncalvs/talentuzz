@@ -86,7 +86,7 @@ const updateJobHandler = rest.patch(
       data: jobData,
     });
 
-    return res(ctx.delay(300), ctx.status(200), ctx.json(job));
+    return res(ctx.delay(300), ctx.status(201), ctx.json(job));
   }
 );
 
