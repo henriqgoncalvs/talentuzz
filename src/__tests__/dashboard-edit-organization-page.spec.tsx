@@ -25,7 +25,7 @@ jest.mock('@/features/auth', () => ({
 const organizationUpdatedData = {
   name: 'New Name',
   email: 'New Email',
-  phone: 'New Phone',
+  phone: '12345678',
   info: 'New Info',
 };
 

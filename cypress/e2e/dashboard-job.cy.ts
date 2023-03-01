@@ -5,7 +5,7 @@ const user = testData.users[0];
 const job = testData.jobs[0];
 const jobToBeDeleted = testData.jobs[1];
 
-describe('dashboard', () => {
+describe('dashboard job', () => {
   it('should authenticate into the dashboard', () => {
     cy.clearCookies();
     cy.clearLocalStorage();
