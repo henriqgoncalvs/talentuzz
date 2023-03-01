@@ -6,10 +6,18 @@ import { Button } from '@/components/button';
 import { InputField } from '@/components/form';
 import { Loading } from '@/components/loading';
 import { NotFound } from '@/components/not-found';
+import { resolver, z } from '@/lib/schema-validator';
 
 import { useJob } from '../../api/get-job';
 import { useUpdateJob } from '../../api/update-job';
 import { UpdateJobData } from '../../types';
+
+const updateJobFormSchema = z.object({
+  position: z.string(),
+  department: z.string(),
+  location: z.string(),
+  info: z.string(),
+});
 
 type JobFormProps = {
   jobId: string;
@@ -24,7 +32,9 @@ export const UpdateJobForm = ({
   const updateJob = useUpdateJob({ onSuccess });
 
   const { register, handleSubmit, formState } =
-    useForm<UpdateJobData>();
+    useForm<UpdateJobData>({
+      resolver: resolver(updateJobFormSchema),
+    });
 
   const onSubmit = (data: UpdateJobData) => {
     updateJob.submit({ data, jobId });

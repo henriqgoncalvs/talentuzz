@@ -3,9 +3,15 @@ import { useForm } from 'react-hook-form';
 
 import { Button } from '@/components/button';
 import { InputField } from '@/components/form';
+import { resolver, z } from '@/lib/schema-validator';
 
 import { useLogin } from '../../api/login';
 import { LoginData } from '../../types';
+
+const loginFormSchema = z.object({
+  email: z.string().email(),
+  password: z.string(),
+});
 
 export type LoginFormProps = {
   onSuccess: () => void;
@@ -15,7 +21,9 @@ export const LoginForm = ({ onSuccess }: LoginFormProps) => {
   const login = useLogin({ onSuccess });
 
   const { register, handleSubmit, formState } =
-    useForm<LoginData>();
+    useForm<LoginData>({
+      resolver: resolver(loginFormSchema),
+    });
 
   const onSubmit = (data: LoginData) => {
     login.submit(data);
