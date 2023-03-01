@@ -3,9 +3,17 @@ import { useForm } from 'react-hook-form';
 
 import { Button } from '@/components/button';
 import { InputField } from '@/components/form';
+import { resolver, z } from '@/lib/schema-validator';
 
 import { useCreateJob } from '../../api/create-job';
 import { CreateJobData } from '../../types';
+
+const createJobFormSchema = z.object({
+  position: z.string(),
+  department: z.string(),
+  location: z.string(),
+  info: z.string(),
+});
 
 type JobFormProps = {
   onSuccess: () => void;
@@ -15,7 +23,9 @@ export const CreateJobForm = ({ onSuccess }: JobFormProps) => {
   const createJob = useCreateJob({ onSuccess });
 
   const { register, handleSubmit, formState } =
-    useForm<CreateJobData>();
+    useForm<CreateJobData>({
+      resolver: resolver(createJobFormSchema),
+    });
 
   const onSubmit = (data: CreateJobData) => {
     createJob.submit({ data });

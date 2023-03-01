@@ -4,12 +4,20 @@ import { useForm } from 'react-hook-form';
 
 import { Button } from '@/components/button';
 import { InputField } from '@/components/form';
+import { resolver, z } from '@/lib/schema-validator';
 
 import { useUpdateOrganization } from '../../api/update-organization';
 import {
   Organization,
   UpdateOrganizationData,
 } from '../../types';
+
+const updateOrganizationFormSchema = z.object({
+  name: z.string(),
+  email: z.string(),
+  phone: z.string().min(10).max(14),
+  info: z.string(),
+});
 
 type OrganizationFormProps = {
   onSuccess: () => void;
@@ -25,7 +33,9 @@ export const OrganizationForm = ({
   });
 
   const { register, handleSubmit, formState } =
-    useForm<UpdateOrganizationData>();
+    useForm<UpdateOrganizationData>({
+      resolver: resolver(updateOrganizationFormSchema),
+    });
 
   const onSubmit = (data: UpdateOrganizationData) => {
     updateOrganization.submit({
