@@ -1,4 +1,4 @@
-import { InfoOutlineIcon } from '@chakra-ui/icons';
+import { InfoOutlineIcon, SettingsIcon } from '@chakra-ui/icons';
 import { Box, Container, Flex, HStack } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { ReactNode } from 'react';
@@ -56,6 +56,15 @@ const Navbar = () => {
                 href="/dashboard/jobs"
               >
                 Jobs
+              </Link>
+            </HStack>
+            <HStack spacing="1">
+              <Link
+                icon={<SettingsIcon />}
+                variant="solid"
+                href="/dashboard/organization"
+              >
+                Organization
               </Link>
             </HStack>
           </HStack>
