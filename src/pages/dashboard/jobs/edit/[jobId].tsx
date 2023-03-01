@@ -7,33 +7,38 @@ import { JobForm } from '@/features/jobs';
 import { DashboardLayout } from '@/layouts/dashboard-layout';
 import { useNotifications } from '@/stores/notifications';
 
-const DashboardCreateJobPage = () => {
+const DashboardEditJobPage = () => {
   const { showNotification } = useNotifications();
   const router = useRouter();
+  const jobId = router.query.jobId as string;
 
   const onSuccess = () => {
     showNotification({
       type: 'success',
       title: 'Success',
       duration: 5000,
-      message: 'Job Created!',
+      message: 'Job Edited!',
     });
     router.push(`/dashboard/jobs`);
   };
 
   return (
     <>
-      <Seo title="Create Job" />
-      <Heading mb="8">Create Job</Heading>
-      <JobForm type="create" onSuccess={onSuccess} />
+      <Seo title="Edit Job" />
+      <Heading mb="8">Edit Job</Heading>
+      <JobForm
+        onSuccess={onSuccess}
+        type="update"
+        jobId={jobId}
+      />
     </>
   );
 };
 
-DashboardCreateJobPage.getLayout = function getLayout(
+DashboardEditJobPage.getLayout = function getLayout(
   page: ReactElement
 ) {
   return <DashboardLayout>{page}</DashboardLayout>;
 };
 
-export default DashboardCreateJobPage;
+export default DashboardEditJobPage;

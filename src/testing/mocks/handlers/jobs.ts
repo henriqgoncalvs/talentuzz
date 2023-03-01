@@ -65,7 +65,47 @@ const createJobHandler = rest.post(
       organizationId: user?.organizationId,
     });
 
+    return res(ctx.delay(300), ctx.status(201), ctx.json(job));
+  }
+);
+
+const updateJobHandler = rest.patch(
+  `${API_URL}/jobs/:jobId`,
+  async (req, res, ctx) => {
+    requireAuth({ req });
+
+    const jobId = req.params.jobId as string;
+    const jobData = await req.json();
+
+    const job = db.job.update({
+      where: {
+        id: {
+          equals: jobId,
+        },
+      },
+      data: jobData,
+    });
+
     return res(ctx.delay(300), ctx.status(200), ctx.json(job));
+  }
+);
+
+const deleteJobHandler = rest.delete(
+  `${API_URL}/jobs/:jobId`,
+  async (req, res, ctx) => {
+    requireAuth({ req });
+
+    const jobId = req.params.jobId as string;
+
+    db.job.delete({
+      where: {
+        id: {
+          equals: jobId,
+        },
+      },
+    });
+
+    return res(ctx.delay(300), ctx.status(204));
   }
 );
 
@@ -73,4 +113,6 @@ export const jobsHandlers = [
   getJobsHandler,
   getJobHandler,
   createJobHandler,
+  updateJobHandler,
+  deleteJobHandler,
 ];

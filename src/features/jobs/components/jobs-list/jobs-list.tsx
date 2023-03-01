@@ -1,3 +1,4 @@
+import { EditIcon } from '@chakra-ui/icons';
 import { Box } from '@chakra-ui/react';
 
 import {
@@ -7,6 +8,7 @@ import {
 import { Link } from '@/components/link';
 
 import { Job } from '../../types';
+import { DeleteJobAlert } from '../delete-job-alert';
 
 type JobListType = 'dashboard' | 'public';
 
@@ -50,6 +52,30 @@ const getTableColumns = (
           </Link>
         );
       },
+    },
+    {
+      title: '',
+      field: 'id',
+      show: type === 'dashboard',
+      render: ({ entry: { id } }: { entry: { id: string } }) => {
+        return (
+          <Link
+            href={`/dashboard/jobs/edit/${id}`}
+            icon={<EditIcon />}
+            variant="solid"
+          >
+            Edit
+          </Link>
+        );
+      },
+    },
+    {
+      title: '',
+      field: 'id',
+      show: type === 'dashboard',
+      render: ({ entry: { id } }: { entry: { id: string } }) => (
+        <DeleteJobAlert jobId={id} />
+      ),
     },
   ];
 

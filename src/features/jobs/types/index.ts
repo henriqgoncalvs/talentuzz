@@ -12,3 +12,5 @@ export type CreateJobData = Pick<
   Job,
   'position' | 'department' | 'location' | 'info'
 >;
+
+export type UpdateJobData = Partial<CreateJobData>;

@@ -3,6 +3,7 @@ import { testData } from '../../src/testing/test-data';
 const user = testData.users[0];
 
 const job = testData.jobs[0];
+const jobToBeDeleted = testData.jobs[1];
 
 describe('dashboard', () => {
   it('should authenticate into the dashboard', () => {
@@ -89,6 +90,110 @@ describe('dashboard', () => {
     }).click();
 
     cy.findByText(/job created/i).should('exist');
+  });
+
+  it('should edit a job', () => {
+    cy.url().should(
+      'equal',
+      'http://localhost:3000/dashboard/jobs'
+    );
+
+    cy.findByRole('row', {
+      name: new RegExp(
+        `${job.position} ${job.department} ${job.location} View`,
+        'i'
+      ),
+    }).within(() => {
+      cy.findByRole('link', {
+        name: /edit/i,
+      }).click();
+    });
+
+    cy.url().should(
+      'equal',
+      `http://localhost:3000/dashboard/jobs/edit/${job.id}`
+    );
+
+    const jobUpdateData = {
+      position: 'New Position',
+      location: 'New Location',
+      department: 'New Department',
+      info: 'New Info',
+    };
+
+    cy.findByRole('textbox', {
+      name: /position/i,
+    })
+      .clear()
+      .type(jobUpdateData.position);
+
+    cy.findByRole('textbox', {
+      name: /department/i,
+    })
+      .clear()
+      .type(jobUpdateData.department);
+
+    cy.findByRole('textbox', {
+      name: /location/i,
+    })
+      .clear()
+      .type(jobUpdateData.location);
+
+    cy.findByRole('textbox', {
+      name: /info/i,
+    })
+      .clear()
+      .type(jobUpdateData.info);
+
+    cy.findByRole('button', {
+      name: /Edit/i,
+    }).click();
+
+    cy.findByText(/job edited!/i).should('exist');
+
+    // Check if the job is updated in the table
+    cy.findByRole('row', {
+      name: new RegExp(
+        `${jobUpdateData.position} ${jobUpdateData.department} ${jobUpdateData.location} View`,
+        'i'
+      ),
+    });
+  });
+
+  it('should delete a job', () => {
+    cy.url().should(
+      'equal',
+      'http://localhost:3000/dashboard/jobs'
+    );
+
+    cy.findByRole('row', {
+      name: new RegExp(
+        `${jobToBeDeleted.position} ${jobToBeDeleted.department} ${jobToBeDeleted.location} View`,
+        'i'
+      ),
+    }).within(() => {
+      cy.findByRole('button', {
+        name: /delete/i,
+      }).click();
+    });
+
+    cy.findByRole('alertdialog').within(() => {
+      cy.findByRole('button', {
+        name: /delete/i,
+      }).click();
+    });
+
+    cy.findByText(/job deleted!/i).should('exist');
+
+    cy.findByRole('alertdialog').should('not.exist');
+
+    // Check if the job is deleted from the table
+    cy.findByRole('row', {
+      name: new RegExp(
+        `${jobToBeDeleted.position} ${jobToBeDeleted.department} ${jobToBeDeleted.location} View`,
+        'i'
+      ),
+    }).should('not.exist');
   });
 
   it('should log out from the dashboard', () => {

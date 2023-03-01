@@ -4,10 +4,10 @@ import {
   Table,
   Tbody,
   Td,
+  Text,
   Th,
   Thead,
   Tr,
-  Text,
 } from '@chakra-ui/react';
 
 import { Entity } from '@/types';
@@ -18,6 +18,7 @@ type DataTableColumn<Entry> = {
   title: string;
   field: keyof Entry;
   render?: ({ entry }: { entry: Entry }) => JSX.Element;
+  show?: boolean;
 };
 
 export type DataTableProps<Entry> = {
@@ -54,11 +55,10 @@ export const DataTable = <Entry extends Entity>({
         <Table variant="striped" w="full">
           <Thead>
             <Tr>
-              {columns.map((column, index) => (
-                <Th key={column.title + index}>
-                  {column.title}
-                </Th>
-              ))}
+              {columns.map(
+                ({ title, show = true }, index) =>
+                  show && <Th key={title + index}>{title}</Th>
+              )}
             </Tr>
           </Thead>
           <Tbody>
@@ -68,15 +68,19 @@ export const DataTable = <Entry extends Entity>({
                 key={entry.id || entryIndex}
               >
                 {columns.map(
-                  ({ field, title, render }, columnIndex) => (
-                    <Td key={title + columnIndex}>
-                      <Text>
-                        {render
-                          ? render({ entry })
-                          : `${entry[field]}`}
-                      </Text>
-                    </Td>
-                  )
+                  (
+                    { field, title, render, show = true },
+                    columnIndex
+                  ) =>
+                    show && (
+                      <Td key={title + columnIndex}>
+                        <Text>
+                          {render
+                            ? render({ entry })
+                            : `${entry[field]}`}
+                        </Text>
+                      </Td>
+                    )
                 )}
               </Tr>
             ))}

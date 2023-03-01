@@ -7,13 +7,11 @@ import { InputField } from '@/components/form';
 import { useCreateJob } from '../../api/create-job';
 import { CreateJobData } from '../../types';
 
-export type CreateJobFormProps = {
+type JobFormProps = {
   onSuccess: () => void;
 };
 
-export const CreateJobForm = ({
-  onSuccess,
-}: CreateJobFormProps) => {
+export const CreateJobForm = ({ onSuccess }: JobFormProps) => {
   const createJob = useCreateJob({ onSuccess });
 
   const { register, handleSubmit, formState } =
