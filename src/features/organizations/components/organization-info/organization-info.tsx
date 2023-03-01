@@ -38,7 +38,7 @@ export const OrganizationInfo = ({
           {type === 'dashboard' && (
             <Center>
               <Link
-                href={`/dashboard/organizations/edit`}
+                href={`/dashboard/organization/edit`}
                 icon={<EditIcon />}
                 variant="solid"
               >
