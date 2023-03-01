@@ -27,7 +27,7 @@ const jobUpdatedData = {
   info: 'New Info',
 };
 
-describe('#PAGE - DashboardEditJobPage', () => {
+describe('#PAGE - Dashboard Edit Job Page', () => {
   it('should edit a job', async () => {
     const { user } = appRenderWithUserEvent(
       <DashboardEditJobPage />

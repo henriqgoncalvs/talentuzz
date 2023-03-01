@@ -1,15 +1,21 @@
-import { Heading, Stack } from '@chakra-ui/react';
+import { EditIcon } from '@chakra-ui/icons';
+import { Center, Heading, Stack } from '@chakra-ui/react';
 
 import { Content } from '@/components/content';
 import { InfoCard } from '@/components/info-card';
+import { Link } from '@/components/link';
 
 import { Organization } from '../../types';
 
+type OrganizationInfoProps = {
+  organization: Organization;
+  type?: 'public' | 'dashboard';
+};
+
 export const OrganizationInfo = ({
   organization,
-}: {
-  organization: Organization;
-}) => {
+  type = 'public',
+}: OrganizationInfoProps) => {
   return (
     <>
       <Stack
@@ -28,6 +34,18 @@ export const OrganizationInfo = ({
             label="Phone Number"
             value={organization.phone}
           />
+
+          {type === 'dashboard' && (
+            <Center>
+              <Link
+                href={`/dashboard/organization/edit`}
+                icon={<EditIcon />}
+                variant="solid"
+              >
+                Edit
+              </Link>
+            </Center>
+          )}
         </Stack>
       </Stack>
 

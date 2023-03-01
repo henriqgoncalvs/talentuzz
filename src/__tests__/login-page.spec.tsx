@@ -19,7 +19,7 @@ jest.mock('next/router', () => ({
   useRouter: () => router,
 }));
 
-describe('Login Page', () => {
+describe('#PAGE - Login Page', () => {
   it('should login the user into the dashboard', async () => {
     const { user } = appRenderWithUserEvent(<LoginPage />);
 

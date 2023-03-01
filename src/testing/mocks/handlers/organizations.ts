@@ -42,7 +42,29 @@ const getOrganizationHandler = rest.get(
   }
 );
 
+const updateOrganizationHandler = rest.patch(
+  `${API_URL}/organizations/:organizationId`,
+  async (req, res, ctx) => {
+    const organizationId = req.params.organizationId as string;
+    const organizationData = await req.json();
+
+    const organization = db.organization.update({
+      where: {
+        id: { equals: organizationId },
+      },
+      data: organizationData,
+    });
+
+    return res(
+      ctx.delay(300),
+      ctx.status(200),
+      ctx.json(organization)
+    );
+  }
+);
+
 export const organizationsHandlers = [
   getOrganizationsHandler,
   getOrganizationHandler,
+  updateOrganizationHandler,
 ];
