@@ -18,7 +18,7 @@ import { Link } from '@/components/link';
 
 export const HeroSection = () => {
   return (
-    <Center flexDirection="column" minH="80vh">
+    <Center flexDirection="column" minH="80vh" as="section">
       <HStack w="full" alignItems="stretch">
         <VStack
           flex="1"

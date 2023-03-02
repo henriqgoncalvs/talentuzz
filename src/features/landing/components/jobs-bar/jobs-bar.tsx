@@ -25,7 +25,12 @@ const JobBox = ({
 
 export const JobsBarSection = () => {
   return (
-    <Box position="relative" color="secondary.500" h="60px">
+    <Box
+      position="relative"
+      color="secondary.500"
+      h="60px"
+      as="section"
+    >
       <HStack
         bg="black"
         position="absolute"

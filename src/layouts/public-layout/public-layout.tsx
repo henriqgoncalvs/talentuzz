@@ -12,7 +12,7 @@ export const PublicLayout = ({ children }: PublicLayoutP) => {
   return (
     <>
       <Navbar />
-      <Box as="section" pt="20">
+      <Box as="main" pt="20">
         <Box maxW="container.lg" mx="auto">
           <Box mx="4">{children}</Box>
         </Box>

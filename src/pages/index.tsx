@@ -1,7 +1,13 @@
 import { ReactElement } from 'react';
 
 import { Seo } from '@/components/seo';
-import { HeroSection, JobsBarSection } from '@/features/landing';
+import {
+  FaqSection,
+  FindATalentSection,
+  HeroSection,
+  JobsBarSection,
+  NumbersInfoSection,
+} from '@/features/landing';
 import { PublicLayout } from '@/layouts/public-layout';
 
 const LandingPage = () => {
@@ -10,6 +16,9 @@ const LandingPage = () => {
       <Seo title="Talentuzz" />
       <HeroSection />
       <JobsBarSection />
+      <NumbersInfoSection />
+      <FindATalentSection />
+      <FaqSection />
     </>
   );
 };
