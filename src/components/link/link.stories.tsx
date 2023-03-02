@@ -1,7 +1,7 @@
 import { LinkIcon } from '@chakra-ui/icons';
 import { Meta, StoryObj } from '@storybook/react';
 
-import { Link, LinkP } from './link';
+import { Link, LinkProps } from './link';
 
 const meta: Meta = {
   title: 'Components/Link',
@@ -10,7 +10,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const Default: StoryObj<LinkP> = {
+export const Default: StoryObj<LinkProps> = {
   args: {
     href: '/',
     children: 'Home',

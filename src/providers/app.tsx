@@ -5,8 +5,8 @@ import { ReactNode } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 
 import { Notifications } from '@/components/notifications';
-import { theme } from '@/config/theme';
 import { queryClient } from '@/lib/react-query';
+import { theme } from '@/theme';
 
 type AppProviderProps = {
   children: ReactNode;

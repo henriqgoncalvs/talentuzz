@@ -1,7 +1,7 @@
 import { PlusSquareIcon } from '@chakra-ui/icons';
 import { Meta, StoryObj } from '@storybook/react';
 
-import { Button, ButtonP } from './button';
+import { Button, ButtonProps } from './button';
 
 const meta: Meta = {
   title: 'Components/Button',
@@ -10,7 +10,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const Default: StoryObj<ButtonP> = {
+export const Default: StoryObj<ButtonProps> = {
   args: { children: 'Hello' },
 };
 

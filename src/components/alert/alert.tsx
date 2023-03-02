@@ -70,7 +70,6 @@ export const Alert = ({
                 Cancel
               </Button>
               <Button
-                variant="solid"
                 onClick={() => {
                   action({ onClose });
                 }}
