@@ -1,42 +1,23 @@
-import { Button } from '@chakra-ui/react';
+import { ButtonProps as ChakraButtonProps } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import { ReactNode } from 'react';
 
-const variants = {
-  link: {
-    variant: 'link',
-    color: 'primary',
-  },
-  solid: {
-    variant: 'solid',
-    bg: 'primary',
-    color: 'primaryAccent',
-    _hover: {
-      opacity: '0.9',
-    },
-  },
-  outline: {
-    variant: 'outline',
-    color: 'primary',
-    bg: 'white',
-  },
-};
+import { Button } from '../button';
 
-export type LinkP = {
+export type LinkProps = {
   href: string;
-  children: ReactNode;
-  variant?: keyof typeof variants;
   icon?: JSX.Element;
   shallow?: boolean;
-};
+  target?: string;
+} & ChakraButtonProps;
 
 export const Link = ({
   href,
   children,
   variant = 'link',
   shallow = false,
-  icon,
-}: LinkP) => {
+  target,
+  ...restProps
+}: LinkProps) => {
   return (
     <NextLink
       href={href}
@@ -44,7 +25,12 @@ export const Link = ({
       passHref
       legacyBehavior
     >
-      <Button leftIcon={icon} as="a" {...variants[variant]}>
+      <Button
+        as="a"
+        target={target}
+        variant={variant}
+        {...restProps}
+      >
         {children}
       </Button>
     </NextLink>

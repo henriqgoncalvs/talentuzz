@@ -1,10 +1,11 @@
-import { Button, Stack } from '@chakra-ui/react';
+import { Stack } from '@chakra-ui/react';
 import {
   GetServerSidePropsContext,
   InferGetServerSidePropsType,
 } from 'next';
 import { ReactElement } from 'react';
 
+import { Link } from '@/components/link';
 import { NotFound } from '@/components/not-found';
 import { Seo } from '@/components/seo';
 import { getJob, PublicJobInfo } from '@/features/jobs';
@@ -33,9 +34,8 @@ export const PublicJobPage = ({
       <Seo title={`${job.position} | ${job.location}`} />
       <Stack w="full">
         <PublicJobInfo job={job} />
-        <Button
-          bg="primary"
-          color="primaryAccent"
+        <Link
+          variant="solid"
           _hover={{
             opacity: '0.9',
           }}
@@ -45,7 +45,7 @@ export const PublicJobPage = ({
           target="_blank"
         >
           Apply
-        </Button>
+        </Link>
       </Stack>
     </>
   );

@@ -42,16 +42,17 @@ const Navbar = () => {
   });
 
   return (
-    <Box as="nav" bg="primary" color="primaryAccent">
+    <Box as="nav" bg="brand.500" color="accent">
       <Container maxW="container.lg" size="3xl" py="3">
         <Flex justify="space-between">
           <HStack>
-            <Link variant="solid" href="/">
+            <Link variant="outline" href="/">
               Talentuzz
             </Link>
             <HStack spacing="1">
               <Link
                 icon={<InfoOutlineIcon />}
+                colorScheme="secondary"
                 variant="solid"
                 href="/dashboard/jobs"
               >
@@ -61,6 +62,7 @@ const Navbar = () => {
             <HStack spacing="1">
               <Link
                 icon={<SettingsIcon />}
+                colorScheme="secondary"
                 variant="solid"
                 href="/dashboard/organization"
               >
