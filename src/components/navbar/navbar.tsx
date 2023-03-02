@@ -8,6 +8,7 @@ import {
   Skeleton,
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 import { Link } from '@/components/link';
 import { useLogout, useUser } from '@/features/auth';
@@ -18,10 +19,30 @@ export const Navbar = () => {
   const logout = useLogout({
     onSuccess: () => router.push('/auth/login'),
   });
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== undefined) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 0) {
+          setIsScrolled(true);
+        } else {
+          setIsScrolled(false);
+        }
+      });
+    }
+  });
 
   return (
-    <Box as="nav" position="fixed" w="full">
-      <Container maxW="container.lg" size="3xl" py="3">
+    <Box
+      as="nav"
+      position="fixed"
+      w="full"
+      zIndex="sticky"
+      bg={isScrolled ? 'brand.500' : 'transparent'}
+      transition="background-color 0.1s ease-in"
+    >
+      <Container maxW="container.lg" size="3xl" py="4">
         <Flex justify="space-between">
           <HStack>
             <Link
@@ -29,6 +50,7 @@ export const Navbar = () => {
               href="/"
               fontFamily="clash-display"
               fontSize="3xl"
+              pl="0"
             >
               talentuzz
             </Link>

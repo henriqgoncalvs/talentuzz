@@ -1,11 +1,9 @@
-import { InfoOutlineIcon, SettingsIcon } from '@chakra-ui/icons';
-import { Box, Container, Flex, HStack } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
+import { Box, Container } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
-import { Button } from '@/components/button';
 import { Link } from '@/components/link';
-import { Protected, useLogout, useUser } from '@/features/auth';
+import { Navbar } from '@/components/navbar';
+import { Protected, useUser } from '@/features/auth';
 
 export type DashboardLayoutP = {
   children: ReactNode;
@@ -18,8 +16,8 @@ export const DashboardLayout = ({
 
   return (
     <Protected>
-      <Box as="section" h="100vh" overflowY="auto">
-        <Navbar />
+      <Navbar />
+      <Box as="section" pt="20">
         <Container as="main" maxW="container.lg" py="12">
           {children}
         </Container>
@@ -32,56 +30,5 @@ export const DashboardLayout = ({
         </Box>
       </Box>
     </Protected>
-  );
-};
-
-const Navbar = () => {
-  const router = useRouter();
-  const logout = useLogout({
-    onSuccess: () => router.push('/auth/login'),
-  });
-
-  return (
-    <Box as="nav" bg="brand.500" color="accent">
-      <Container maxW="container.lg" size="3xl" py="3">
-        <Flex justify="space-between">
-          <HStack>
-            <Link variant="outline" href="/">
-              Talentuzz
-            </Link>
-            <HStack spacing="1">
-              <Link
-                icon={<InfoOutlineIcon />}
-                colorScheme="secondary"
-                variant="solid"
-                href="/dashboard/jobs"
-              >
-                Jobs
-              </Link>
-            </HStack>
-            <HStack spacing="1">
-              <Link
-                icon={<SettingsIcon />}
-                colorScheme="secondary"
-                variant="solid"
-                href="/dashboard/organization"
-              >
-                Organization
-              </Link>
-            </HStack>
-          </HStack>
-          <HStack>
-            <Button
-              isDisabled={logout.isLoading}
-              isLoading={logout.isLoading}
-              variant="outline"
-              onClick={() => logout.submit()}
-            >
-              Log Out
-            </Button>
-          </HStack>
-        </Flex>
-      </Container>
-    </Box>
   );
 };
