@@ -1,6 +1,7 @@
 import { Box, Container } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
+import { Footer } from '@/components/footer';
 import { Link } from '@/components/link';
 import { Navbar } from '@/components/navbar';
 import { Protected, useUser } from '@/features/auth';
@@ -29,6 +30,7 @@ export const DashboardLayout = ({
           </Link>
         </Box>
       </Box>
+      <Footer />
     </Protected>
   );
 };
