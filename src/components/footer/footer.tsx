@@ -23,6 +23,7 @@ export const Footer = () => (
     bg="accent"
     color="white"
     w="full"
+    mt="5"
   >
     <Container maxW="container.lg">
       <Stack
