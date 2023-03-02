@@ -1,7 +1,9 @@
 import { Center, Heading, Text, VStack } from '@chakra-ui/react';
+import { ReactElement } from 'react';
 
 import { Link } from '@/components/link';
 import { Seo } from '@/components/seo';
+import { PublicLayout } from '@/layouts/public-layout';
 
 const LandingPage = () => {
   return (
@@ -24,6 +26,10 @@ const LandingPage = () => {
       </Center>
     </>
   );
+};
+
+LandingPage.getLayout = function getLayout(page: ReactElement) {
+  return <PublicLayout>{page}</PublicLayout>;
 };
 
 export default LandingPage;
