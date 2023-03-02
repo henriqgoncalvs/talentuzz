@@ -43,7 +43,7 @@ const FaqItem = ({
 
 export const FaqSection = () => {
   return (
-    <VStack as="section" w="full" my="20" spacing="10">
+    <VStack as="section" w="full" mt="20" spacing="10">
       <Heading fontSize="6xl" as="h4">
         FAQ
       </Heading>
