@@ -1,0 +1,698 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#PAGE - Landing Page should display the landing page  1`] = `
+<DocumentFragment>
+  <section
+    class="css-62dk55"
+    role="banner"
+  >
+    <div
+      class="chakra-stack css-1qc63e0"
+    >
+      <div
+        class="chakra-stack css-vz26c2"
+      >
+        <h2
+          class="chakra-heading css-1fsluq0"
+        >
+          Startup jobs you can't find 
+          <span
+            class="chakra-text css-ue6a6d"
+          >
+            anywhere else
+          </span>
+        </h2>
+        <p
+          class="chakra-text css-1vp0fo8"
+        >
+          The best place to discover & apply to the coolest startup jobs, without the black box.
+        </p>
+        <div
+          class="chakra-stack css-9l0bz"
+        >
+          <a
+            class="chakra-button css-1bud3e8"
+            href="/jobs"
+            type="button"
+          >
+            Find your next job
+          </a>
+          <a
+            class="chakra-button css-170fk8q"
+            href="/dashboard/jobs"
+            type="button"
+          >
+            I'm a startup
+          </a>
+        </div>
+      </div>
+      <div
+        class="chakra-stack css-no251v"
+      >
+        <div
+          class="chakra-stack css-11s0wus"
+        >
+          <div
+            class="css-1ko6ovq"
+          >
+            <svg
+              fill="currentColor"
+              font-size="1.3rem"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 384 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"
+              />
+            </svg>
+          </div>
+          <div
+            class="chakra-stack css-1h4ws66"
+          >
+            <p
+              class="chakra-text css-emdu1j"
+            >
+              Apple Inc.
+            </p>
+            <p
+              class="chakra-text css-1ocm1mk"
+            >
+              Web Designer
+            </p>
+          </div>
+          <p
+            class="chakra-text css-722v25"
+          >
+            $120k
+            <span
+              class="chakra-text css-q9k0mw"
+            >
+              /year
+            </span>
+          </p>
+        </div>
+        <div
+          class="chakra-stack css-d1tivh"
+        >
+          <div
+            class="css-7pwou8"
+          >
+            <svg
+              fill="currentColor"
+              font-size="1.3rem"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 496 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M248 8C111.1 8 0 119.1 0 256s111.1 248 248 248 248-111.1 248-248S384.9 8 248 8zm100.7 364.9c-4.2 0-6.8-1.3-10.7-3.6-62.4-37.6-135-39.2-206.7-24.5-3.9 1-9 2.6-11.9 2.6-9.7 0-15.8-7.7-15.8-15.8 0-10.3 6.1-15.2 13.6-16.8 81.9-18.1 165.6-16.5 237 26.2 6.1 3.9 9.7 7.4 9.7 16.5s-7.1 15.4-15.2 15.4zm26.9-65.6c-5.2 0-8.7-2.3-12.3-4.2-62.5-37-155.7-51.9-238.6-29.4-4.8 1.3-7.4 2.6-11.9 2.6-10.7 0-19.4-8.7-19.4-19.4s5.2-17.8 15.5-20.7c27.8-7.8 56.2-13.6 97.8-13.6 64.9 0 127.6 16.1 177 45.5 8.1 4.8 11.3 11 11.3 19.7-.1 10.8-8.5 19.5-19.4 19.5zm31-76.2c-5.2 0-8.4-1.3-12.9-3.9-71.2-42.5-198.5-52.7-280.9-29.7-3.6 1-8.1 2.6-12.9 2.6-13.2 0-23.3-10.3-23.3-23.6 0-13.6 8.4-21.3 17.4-23.9 35.2-10.3 74.6-15.2 117.5-15.2 73 0 149.5 15.2 205.4 47.8 7.8 4.5 12.9 10.7 12.9 22.6 0 13.6-11 23.3-23.2 23.3z"
+              />
+            </svg>
+          </div>
+          <div
+            class="chakra-stack css-1h4ws66"
+          >
+            <p
+              class="chakra-text css-zm3ud3"
+            >
+              Spotify
+            </p>
+            <p
+              class="chakra-text css-1ocm1mk"
+            >
+              Front Developer
+            </p>
+          </div>
+          <p
+            class="chakra-text css-722v25"
+          >
+            $170k
+            <span
+              class="chakra-text css-q9k0mw"
+            >
+              /year
+            </span>
+          </p>
+        </div>
+        <div
+          class="chakra-stack css-16g8qq"
+        >
+          <div
+            class="chakra-stack css-1h4ws66"
+          >
+            <div
+              class="css-1jm3t54"
+            >
+              <svg
+                fill="currentColor"
+                font-size="1.3rem"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M128 480h256V80c0-26.5-21.5-48-48-48H176c-26.5 0-48 21.5-48 48v400zm64-384h128v32H192V96zm320 80v256c0 26.5-21.5 48-48 48h-48V128h48c26.5 0 48 21.5 48 48zM96 480H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48h48v352z"
+                />
+              </svg>
+            </div>
+            <p
+              class="chakra-text css-nlcukz"
+            >
+              1.325
+            </p>
+            <p
+              class="chakra-text css-ieww86"
+            >
+              Job views
+            </p>
+          </div>
+          <p
+            class="chakra-text css-afdfca"
+          >
+            200+ 
+            <span
+              class="chakra-text css-119zpey"
+            >
+              this week
+            </span>
+          </p>
+        </div>
+        <div
+          class="chakra-stack css-tfq8uf"
+        >
+          <div
+            class="chakra-stack css-1h4ws66"
+          >
+            <div
+              class="css-jwcbe0"
+            >
+              <svg
+                fill="currentColor"
+                font-size="1.3rem"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 640 512"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M624 208h-64v-64c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v64h-64c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h64v64c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-64h64c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm-400 48c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"
+                />
+              </svg>
+            </div>
+            <p
+              class="chakra-text css-mhu0er"
+            >
+              205
+            </p>
+            <p
+              class="chakra-text css-qqfgvy"
+            >
+              Job Applications
+            </p>
+          </div>
+          <p
+            class="chakra-text css-jwlz3j"
+          >
+            10+ 
+            <span
+              class="chakra-text css-0"
+            >
+              today
+            </span>
+          </p>
+        </div>
+        <div
+          class="css-13kwi1a"
+        >
+          <svg
+            fill="currentColor"
+            font-size="1.3rem"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 488 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"
+            />
+          </svg>
+        </div>
+        <div
+          class="css-7gwti"
+        >
+          <svg
+            fill="currentColor"
+            font-size="1.3rem"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M391.17,103.47H352.54v109.7h38.63ZM285,103H246.37V212.75H285ZM120.83,0,24.31,91.42V420.58H140.14V512l96.53-91.42h77.25L487.69,256V0ZM449.07,237.75l-77.22,73.12H294.61l-67.6,64v-64H140.14V36.58H449.07Z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section
+    class="css-1swpzeu"
+  >
+    <div
+      class="chakra-stack css-482rwy"
+    >
+      <p
+        class="chakra-text css-epvm6"
+      >
+        Product designer
+      </p>
+      <div
+        class="css-khvsip"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g>
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+            <path
+              d="M5.636 12.707l1.828 1.829L8.88 13.12 7.05 11.293l1.414-1.414 1.829 1.828 1.414-1.414L9.88 8.464l1.414-1.414L13.12 8.88l1.415-1.415-1.829-1.828 2.829-2.828a1 1 0 0 1 1.414 0l4.242 4.242a1 1 0 0 1 0 1.414L8.464 21.192a1 1 0 0 1-1.414 0L2.808 16.95a1 1 0 0 1 0-1.414l2.828-2.829zm8.485 5.656l4.243-4.242L21 16.757V21h-4.242l-2.637-2.637zM5.636 9.878L2.807 7.05a1 1 0 0 1 0-1.415l2.829-2.828a1 1 0 0 1 1.414 0L9.88 5.635 5.636 9.878z"
+            />
+          </g>
+        </svg>
+      </div>
+      <p
+        class="chakra-text css-epvm6"
+      >
+        Marketing
+      </p>
+      <div
+        class="css-khvsip"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 16 16"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0v-11zm-1 .724c-2.067.95-4.539 1.481-7 1.656v6.237a25.222 25.222 0 0 1 1.088.085c2.053.204 4.038.668 5.912 1.56V3.224zm-8 7.841V4.934c-.68.027-1.399.043-2.008.053A2.02 2.02 0 0 0 0 7v2c0 1.106.896 1.996 1.994 2.009a68.14 68.14 0 0 1 .496.008 64 64 0 0 1 1.51.048zm1.39 1.081c.285.021.569.047.85.078l.253 1.69a1 1 0 0 1-.983 1.187h-.548a1 1 0 0 1-.916-.599l-1.314-2.48a65.81 65.81 0 0 1 1.692.064c.327.017.65.037.966.06z"
+          />
+        </svg>
+      </div>
+      <p
+        class="chakra-text css-epvm6"
+      >
+        Front-end
+      </p>
+      <div
+        class="css-khvsip"
+      >
+        <svg
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <desc />
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+            stroke="none"
+          />
+          <polyline
+            points="7 8 3 12 7 16"
+          />
+          <polyline
+            points="17 8 21 12 17 16"
+          />
+          <line
+            x1="14"
+            x2="10"
+            y1="4"
+            y2="20"
+          />
+        </svg>
+      </div>
+      <p
+        class="chakra-text css-epvm6"
+      >
+        UI designer
+      </p>
+      <div
+        class="css-khvsip"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M416 352c-12.6-.84-21-4-28-12-14-16-14-36 5.49-52.48l32.82-29.14c50.27-44.41 50.27-117.21 0-161.63C389.26 64.14 339.54 48 287.86 48c-60.34 0-123.39 22-172 65.11-90.46 80-90.46 210.92 0 290.87 45 39.76 105.63 59.59 165.64 60h1.84c60 0 119.07-19.5 161.2-56.77C464 390 464 385 444.62 355.56 440 348 431 353 416 352zM112 208a32 32 0 1132 32 32 32 0 01-32-32zm40 135a32 32 0 1132-32 32 32 0 01-32 32zm40-199a32 32 0 1132 32 32 32 0 01-32-32zm64 271a48 48 0 1148-48 48 48 0 01-48 48zm72-239a32 32 0 1132-32 32 32 0 01-32 32z"
+          />
+        </svg>
+      </div>
+      <p
+        class="chakra-text css-epvm6"
+      >
+        Back-end
+      </p>
+      <div
+        class="css-khvsip"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g>
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+            <path
+              d="M21 9.5v3c0 2.485-4.03 4.5-9 4.5s-9-2.015-9-4.5v-3c0 2.485 4.03 4.5 9 4.5s9-2.015 9-4.5zm-18 5c0 2.485 4.03 4.5 9 4.5s9-2.015 9-4.5v3c0 2.485-4.03 4.5-9 4.5s-9-2.015-9-4.5v-3zm9-2.5c-4.97 0-9-2.015-9-4.5S7.03 3 12 3s9 2.015 9 4.5-4.03 4.5-9 4.5z"
+            />
+          </g>
+        </svg>
+      </div>
+      <p
+        class="chakra-text css-0"
+      >
+        3d illustrator
+      </p>
+    </div>
+  </section>
+  <section
+    class="chakra-stack css-1v6i4zn"
+  >
+    <div
+      class="css-smyrrj"
+    >
+      <h2
+        class="chakra-heading css-1pvpnp"
+      >
+        130K+
+      </h2>
+      <p
+        class="chakra-text css-0"
+      >
+        Tech Jobs
+      </p>
+    </div>
+    <div
+      class="css-yzf37k"
+    >
+      <h2
+        class="chakra-heading css-1pvpnp"
+      >
+        6,000,000
+      </h2>
+      <p
+        class="chakra-text css-0"
+      >
+        Matches Made
+      </p>
+    </div>
+    <div
+      class="css-smyrrj"
+    >
+      <h2
+        class="chakra-heading css-1pvpnp"
+      >
+        8M+
+      </h2>
+      <p
+        class="chakra-text css-0"
+      >
+        Startup-ready candidates
+      </p>
+    </div>
+  </section>
+  <section
+    class="css-1iqsx8f"
+  >
+    <div
+      class="css-1pggtx9"
+    >
+      <div
+        class="chakra-container css-14vcoqp"
+      >
+        <div
+          class="chakra-stack css-10st7yp"
+        >
+          <div
+            class="css-joqkiv"
+          >
+            <img
+              alt="3 girls in a meeting talking"
+              data-nimg="1"
+              decoding="async"
+              height="1365"
+              loading="lazy"
+              src="/_next/image?url=%2Fassets%2Fimg%2Ffind-a-talent.webp&w=3840&q=75"
+              srcset="/_next/image?url=%2Fassets%2Fimg%2Ffind-a-talent.webp&w=2048&q=75 1x, /_next/image?url=%2Fassets%2Fimg%2Ffind-a-talent.webp&w=3840&q=75 2x"
+              style="color: transparent; object-fit: cover; object-position: center; height: 100%;"
+              width="2048"
+            />
+          </div>
+          <div
+            class="chakra-stack css-vz26c2"
+          >
+            <h2
+              class="chakra-heading css-qcvbl8"
+            >
+              Solution for finding the
+              <span
+                class="chakra-text css-ue6a6d"
+              >
+                best talents
+              </span>
+            </h2>
+            <p
+              class="chakra-text css-1bgxxj3"
+            >
+              More than 1000 startups find their pro talent here. We connect the best professionals with you to help you grow your business.
+            </p>
+            <a
+              class="chakra-button css-dj23n6"
+              href="/dashboard/jobs"
+              type="button"
+            >
+              Start posting jobs
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section
+    class="chakra-stack css-1e3h9qv"
+  >
+    <h4
+      class="chakra-heading css-1ptr69z"
+    >
+      FAQ
+    </h4>
+    <div
+      class="chakra-accordion css-dtrxjs"
+    >
+      <div
+        class="chakra-accordion__item css-17mg6aq"
+      >
+        <p
+          class="chakra-text css-0"
+        >
+          <button
+            aria-controls="accordion-panel-:r0:"
+            aria-expanded="false"
+            class="chakra-accordion__button css-uttm9k"
+            data-index="0"
+            id="accordion-button-:r0:"
+            type="button"
+          >
+            <span
+              class="css-dt1j7w"
+            >
+              What is the best way to get started?
+            </span>
+            <svg
+              aria-hidden="true"
+              class="chakra-icon chakra-accordion__icon css-186l2rg"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </p>
+        <div
+          class="chakra-collapse"
+          style="overflow: hidden; display: none; opacity: 0; height: 0px;"
+        >
+          <div
+            aria-labelledby="accordion-button-:r0:"
+            class="chakra-accordion__panel css-x748u7"
+            id="accordion-panel-:r0:"
+            role="region"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="chakra-accordion__item css-17mg6aq"
+      >
+        <p
+          class="chakra-text css-0"
+        >
+          <button
+            aria-controls="accordion-panel-:r2:"
+            aria-expanded="false"
+            class="chakra-accordion__button css-uttm9k"
+            data-index="1"
+            id="accordion-button-:r2:"
+            type="button"
+          >
+            <span
+              class="css-dt1j7w"
+            >
+              How can i create an organization?
+            </span>
+            <svg
+              aria-hidden="true"
+              class="chakra-icon chakra-accordion__icon css-186l2rg"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </p>
+        <div
+          class="chakra-collapse"
+          style="overflow: hidden; display: none; opacity: 0; height: 0px;"
+        >
+          <div
+            aria-labelledby="accordion-button-:r2:"
+            class="chakra-accordion__panel css-x748u7"
+            id="accordion-panel-:r2:"
+            role="region"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="chakra-accordion__item css-17mg6aq"
+      >
+        <p
+          class="chakra-text css-0"
+        >
+          <button
+            aria-controls="accordion-panel-:r4:"
+            aria-expanded="false"
+            class="chakra-accordion__button css-uttm9k"
+            data-index="2"
+            id="accordion-button-:r4:"
+            type="button"
+          >
+            <span
+              class="css-dt1j7w"
+            >
+              Who created this platform?
+            </span>
+            <svg
+              aria-hidden="true"
+              class="chakra-icon chakra-accordion__icon css-186l2rg"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </p>
+        <div
+          class="chakra-collapse"
+          style="overflow: hidden; display: none; opacity: 0; height: 0px;"
+        >
+          <div
+            aria-labelledby="accordion-button-:r4:"
+            class="chakra-accordion__panel css-x748u7"
+            id="accordion-panel-:r4:"
+            role="region"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;

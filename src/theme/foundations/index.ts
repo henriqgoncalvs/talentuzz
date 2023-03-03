@@ -39,6 +39,10 @@ export const styles = {
       fontFamily: `${dm_sans.style.fontFamily}, ${baseTheme.fonts.body}`,
     },
 
+    body: {
+      overflowX: 'hidden',
+    },
+
     '#__next': {
       height: '100%',
       bg: 'bg',

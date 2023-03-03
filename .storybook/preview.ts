@@ -1,4 +1,4 @@
-import { theme } from '../src/config/theme';
+import { theme } from '../src/theme';
 
 export const parameters = {
   backgrounds: {

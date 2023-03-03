@@ -29,6 +29,20 @@ export default defineStyleConfig({
       color: 'accent',
       colorScheme: 'black',
     },
+    ghost: {
+      color: 'accent',
+      bg: 'transparent',
+      textDecoration: 'none',
+      _hover: {
+        bg: 'transparent',
+      },
+      _focus: {
+        bg: 'transparent',
+      },
+      _active: {
+        bg: 'transparent',
+      },
+    },
   },
   defaultProps: {
     size: 'md',

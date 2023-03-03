@@ -50,6 +50,7 @@ specifiers:
   react-dom: 18.2.0
   react-error-boundary: ^3.1.4
   react-hook-form: ^7.43.1
+  react-icons: ^4.7.1
   start-server-and-test: ^1.15.4
   storybook: ^7.0.0-beta.46
   tsconfig-paths-webpack-plugin: ^4.0.0
@@ -77,6 +78,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-error-boundary: 3.1.4_react@18.2.0
   react-hook-form: 7.43.1_react@18.2.0
+  react-icons: 4.7.1_react@18.2.0
   zod: 3.20.6
   zustand: 4.3.3_react@18.2.0
 
@@ -12071,6 +12073,14 @@ packages:
       react: ^16.8.0 || ^17 || ^18
     dependencies:
       react: 18.2.0
+
+  /react-icons/4.7.1_react@18.2.0:
+    resolution: {integrity: sha512-yHd3oKGMgm7zxo3EA7H2n7vxSoiGmHk5t6Ou4bXsfcgWyhfDKMpyKfhHR6Bjnn63c+YXBLBPUql9H4wPJM6sXw==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /react-inspector/6.0.1_react@18.2.0:
     resolution: {integrity: sha512-cxKSeFTf7jpSSVddm66sKdolG90qURAX3g1roTeaN6x0YEbtWc8JpmFN9+yIqLNH2uEkYerWLtJZIXRIFuBKrg==}

@@ -206,6 +206,6 @@ describe('dashboard job', () => {
       name: /log out/i,
     }).click();
 
-    cy.url().should('equal', 'http://localhost:3000/auth/login');
+    cy.url().should('equal', 'http://localhost:3000/');
   });
 });
