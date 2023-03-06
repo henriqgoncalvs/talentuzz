@@ -1,3 +1,4 @@
+import { JobWithOrganization } from '@/features/jobs';
 import PublicOrganizationPage, {
   getServerSideProps,
 } from '@/pages/organizations/[organizationId]';
@@ -9,7 +10,12 @@ import {
 } from '@/testing/test-utils';
 
 const organization = testData.organizations[0];
-const jobs = testData.jobs;
+const jobs: JobWithOrganization[] = testData.jobs.map((job) => ({
+  ...job,
+  organization: testData.organizations.find(
+    (org) => org.id === job.organizationId
+  )!,
+}));
 
 describe('#PAGE - Public Organization Page', () => {
   it('should use getServerSideProps that fetches and returns the proper data', async () => {

@@ -1,4 +1,4 @@
-import { Heading, Stack } from '@chakra-ui/react';
+import { Divider, Heading, Stack } from '@chakra-ui/react';
 import {
   GetServerSidePropsContext,
   InferGetServerSidePropsType,
@@ -7,7 +7,11 @@ import { ReactElement } from 'react';
 
 import { NotFound } from '@/components/not-found';
 import { Seo } from '@/components/seo';
-import { getJobs, Job, JobsList } from '@/features/jobs';
+import {
+  getJobs,
+  JobsList,
+  JobWithOrganization,
+} from '@/features/jobs';
 import {
   getOrganization,
   OrganizationInfo,
@@ -28,7 +32,7 @@ const PublicOrganizationPage = ({
     <>
       <Seo title={organization.name} />
       <Stack
-        spacing="4"
+        spacing="6"
         w="full"
         maxW="container.lg"
         mx="auto"
@@ -36,14 +40,9 @@ const PublicOrganizationPage = ({
         p="4"
       >
         <OrganizationInfo organization={organization} />
-        <Heading size="md" my="6">
-          Open Jobs
-        </Heading>
-        <JobsList
-          jobs={jobs}
-          organizationId={organization.id}
-          type="public"
-        />
+        <Divider />
+        <Heading size="lg">Open Jobs</Heading>
+        <JobsList jobs={jobs} />
       </Stack>
     </>
   );
@@ -68,13 +67,21 @@ export const getServerSideProps = async ({
       params: {
         organizationId,
       },
-    }).catch(() => [] as Job[]),
+    }).catch(() => [] as JobWithOrganization[]),
   ]);
+
+  const jobsWithOrganization = jobs.map((job) => ({
+    ...job,
+    organization,
+  }));
 
   return {
     props: {
       organization,
-      jobs,
+      jobs: jobsWithOrganization,
+    } as {
+      organization: typeof organization;
+      jobs: JobWithOrganization[];
     },
   };
 };

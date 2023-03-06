@@ -33,7 +33,7 @@ export const PublicJobPage = ({
     <>
       <Seo title={`${job.position} | ${job.location}`} />
       <Stack w="full">
-        <PublicJobInfo job={job} />
+        <PublicJobInfo job={job} organization={organization} />
         <Link
           variant="solid"
           _hover={{

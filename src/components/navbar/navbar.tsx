@@ -17,7 +17,9 @@ export const Navbar = () => {
   const user = useUser();
   const router = useRouter();
   const logout = useLogout({
-    onSuccess: () => router.pathname !== '/' && router.push('/'),
+    onSuccess: () =>
+      router.pathname !== '/' &&
+      router.push('/', undefined, { shallow: true }),
   });
   const [isScrolled, setIsScrolled] = useState(false);
 

@@ -35,7 +35,7 @@ export const JobCard = ({ job }: JobCardProps) => {
             w="40px"
             h="40px"
           >
-            {job.organization.profileImage ? (
+            {job.organization?.profileImage ? (
               <Image
                 src={job.organization.profileImage}
                 alt={job.organization.name}
@@ -57,7 +57,7 @@ export const JobCard = ({ job }: JobCardProps) => {
       <CardBody>
         <VStack alignItems="flex-start" spacing="3">
           <Text fontSize="sm" color="gray.400">
-            {job.organization.name}
+            {job.organization?.name || '--'}
           </Text>
           <Text fontSize="3xl" fontWeight="bold" lineHeight="7">
             {job.position}
@@ -70,7 +70,11 @@ export const JobCard = ({ job }: JobCardProps) => {
       </CardBody>
 
       <CardFooter>
-        <Link href={`/job/${job.id}`} variant="solid" w="full">
+        <Link
+          href={`/organizations/${job.organization.id}/jobs/${job.id}`}
+          variant="solid"
+          w="full"
+        >
           See more
         </Link>
       </CardFooter>

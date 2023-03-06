@@ -17,6 +17,11 @@ const getJobsHandler = rest.get(
     const organizationId = req.url.searchParams.get(
       'organizationId'
     ) as string;
+    const includes =
+      (req.url.searchParams.get('includes') as string) &&
+      (JSON.parse(
+        req.url.searchParams.get('includes') as string
+      ) as string[]);
 
     let jobs = [];
 
@@ -36,6 +41,24 @@ const getJobsHandler = rest.get(
             equals: organizationId,
           },
         },
+      });
+    }
+
+    if (includes) {
+      jobs = jobs.map((job) => {
+        if (includes.includes('organization')) {
+          const organization = db.organization.findFirst({
+            where: {
+              id: {
+                equals: job.organizationId,
+              },
+            },
+          });
+
+          return { ...job, organization };
+        }
+
+        return job;
       });
     }
 
