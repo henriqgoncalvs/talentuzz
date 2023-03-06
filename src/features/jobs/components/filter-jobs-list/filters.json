@@ -1,0 +1,31 @@
+{
+  "typeOfEmployment": {
+    "label": "Type of Employment",
+    "options": [
+      { "label": "Full Time", "value": "full-time" },
+      { "label": "Part Time", "value": "part-time" },
+      { "label": "Internship", "value": "internship" },
+      { "label": "Freelance", "value": "freelance" },
+      { "label": "Contract", "value": "contract" }
+    ]
+  },
+  "experienceLevel": {
+    "label": "Experience Level",
+    "options": [
+      { "label": "Student Level", "value": "student-level" },
+      { "label": "Entry Level", "value": "entry-level" },
+      { "label": "Mid Level", "value": "mid-level" },
+      { "label": "Senior Level", "value": "senior-level" }
+    ]
+  },
+  "salaryRange": {
+    "label": "Salary Range",
+    "options": [
+      { "label": "$0 to $30k", "value": "0-to-30" },
+      { "label": "$30k to $50k", "value": "30-to-50" },
+      { "label": "$50k to $100k", "value": "50-to-100" },
+      { "label": "$100k to $200k", "value": "100-to-200" },
+      { "label": "$200k+", "value": "200-plus" }
+    ]
+  }
+}

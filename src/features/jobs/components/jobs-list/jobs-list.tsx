@@ -10,14 +10,14 @@ type JobsListProps = {
 
 export const JobsList = ({ jobs, isLoading }: JobsListProps) => {
   return (
-    <Box mt="16" mx="auto" w="full">
+    <Box mt="10" mx="auto" w="full">
       <Grid
         templateColumns={{
           base: 'repeat(1, 1fr)',
           md: 'repeat(2, 1fr)',
           lg: 'repeat(3, 1fr)',
         }}
-        gap="8"
+        gap="5"
       >
         {isLoading ? (
           Array.from({ length: 6 }).map(() => (

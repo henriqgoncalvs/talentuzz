@@ -1,6 +1,7 @@
 import {
   Box,
   Container,
+  Divider,
   Heading,
   HStack,
   Input,
@@ -10,7 +11,7 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react';
-import { ReactElement } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import {
   FaCertificate,
   FaMapMarkerAlt,
@@ -20,9 +21,11 @@ import {
 import { Button } from '@/components/button';
 import { Seo } from '@/components/seo';
 import {
+  FilterJobsList,
   JobsList,
   JobWithOrganization,
   useJobs,
+  useJobsFilters,
 } from '@/features/jobs';
 import { PublicLayout } from '@/layouts/public-layout';
 
@@ -37,16 +40,44 @@ const PublicJobsPage = () => {
 
       <Container role="banner" maxW="container.lg">
         <PublicJobsPageHeader />
-        <JobsList
-          isLoading={isLoading}
-          jobs={jobs as JobWithOrganization[]}
-        />
+        <VStack
+          w="full"
+          spacing="5"
+          mt="5"
+          alignItems="flex-start"
+        >
+          <Text>Search results - {123}</Text>
+          <Divider borderColor="gray.300" />
+          <HStack
+            w="full"
+            alignItems="flex-start"
+            justifyContent="space-between"
+            spacing="5"
+          >
+            <FilterJobsList />
+            <JobsList
+              isLoading={isLoading}
+              jobs={jobs as JobWithOrganization[]}
+            />
+          </HStack>
+        </VStack>
       </Container>
     </>
   );
 };
 
 const PublicJobsPageHeader = () => {
+  const { filters, addFilter } = useJobsFilters();
+  const [position, setPosition] = useState('');
+  const [location, setLocation] = useState('');
+
+  useEffect(() => {
+    if (filters) {
+      if (filters.position) setPosition(filters.position[0]);
+      if (filters.location) setLocation(filters.location[0]);
+    }
+  }, [filters]);
+
   return (
     <Box textAlign="center" minH="50vh" position="relative">
       <VStack
@@ -106,19 +137,32 @@ const PublicJobsPageHeader = () => {
             <InputLeftAddon>
               <FaCertificate />
             </InputLeftAddon>
-            <Input placeholder="Web Design" />
+            <Input
+              placeholder="Web Design"
+              value={position}
+              onChange={(e) => setPosition(e.target.value)}
+            />
           </InputGroup>
           <InputGroup size="lg" variant="filled">
             <InputLeftAddon>
               <FaMapMarkerAlt />
             </InputLeftAddon>
-            <Input placeholder="New York City" />
+            <Input
+              placeholder="New York City"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+            />
           </InputGroup>
           <Button
             icon={<FaSearch />}
             minWidth="min-content"
             variant="outline"
             size="lg"
+            disabled={!location && !position}
+            onClick={() => {
+              if (position) addFilter('position', [position]);
+              if (location) addFilter('location', [location]);
+            }}
           >
             Search
           </Button>

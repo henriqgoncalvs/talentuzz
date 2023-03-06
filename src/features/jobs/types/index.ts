@@ -19,3 +19,31 @@ export type CreateJobData = Pick<
 >;
 
 export type UpdateJobData = Partial<CreateJobData>;
+
+type TypeOfEmployment =
+  | 'full-time'
+  | 'part-time'
+  | 'freelance'
+  | 'internship'
+  | 'contract';
+
+type ExperienceLevel =
+  | 'student-level'
+  | 'entry-level'
+  | 'mid-level'
+  | 'senior-level';
+
+type SalaryRange =
+  | '0-to-30'
+  | '30-to-50'
+  | '50-to-100'
+  | '100-to-200'
+  | '200-plus';
+
+export type JobFilters = {
+  typeOfEmployment?: TypeOfEmployment[];
+  experienceLevel?: ExperienceLevel[];
+  salaryRange?: SalaryRange[];
+  position?: string[];
+  location?: string[];
+};
