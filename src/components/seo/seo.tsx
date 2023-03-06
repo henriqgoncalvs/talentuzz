@@ -7,7 +7,7 @@ export type SeoP = {
 export const Seo = ({ title }: SeoP) => {
   return (
     <Head>
-      <title>{title}</title>
+      <title>{title} | Talentuzz - Find your next job</title>
     </Head>
   );
 };
