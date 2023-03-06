@@ -21,7 +21,7 @@ type LandingPageProps = InferGetStaticPropsType<
 const LandingPage = ({ latestJobs }: LandingPageProps) => {
   return (
     <>
-      <Seo title="Talentuzz" />
+      <Seo />
       <HeroSection />
       <JobsBarSection />
       <NumbersInfoSection />
