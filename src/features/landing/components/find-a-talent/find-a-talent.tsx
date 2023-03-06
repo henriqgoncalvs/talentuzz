@@ -18,6 +18,7 @@ export const FindATalentSection = () => {
       color="secondary.500"
       h="60vh"
       as="section"
+      mt="20"
     >
       <Center
         flexDirection="column"

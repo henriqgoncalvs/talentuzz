@@ -1,4 +1,5 @@
 import LandingPage from '@/pages';
+import { testData } from '@/testing/test-data';
 import {
   appRender,
   screen,
@@ -6,9 +7,18 @@ import {
   within,
 } from '@/testing/test-utils';
 
+const latestJobs = testData.jobs.slice(0, 6).map((job) => ({
+  ...job,
+  organization: testData.organizations.find(
+    (org) => org.id === job.organizationId
+  )!,
+}));
+
 describe('#PAGE - Landing Page', () => {
   it('should display the landing page ', async () => {
-    const { asFragment } = appRender(<LandingPage />);
+    const { asFragment } = appRender(
+      <LandingPage latestJobs={latestJobs} />
+    );
 
     await waitForLoadingToFinish();
 

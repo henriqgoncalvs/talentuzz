@@ -1,3 +1,4 @@
+import { Organization } from '@/features/organizations';
 import { Entity } from '@/types';
 
 export type Job = Entity & {
@@ -6,6 +7,10 @@ export type Job = Entity & {
   info: string;
   location: string;
   department: string;
+};
+
+export type JobWithOrganization = Job & {
+  organization: Organization;
 };
 
 export type CreateJobData = Pick<

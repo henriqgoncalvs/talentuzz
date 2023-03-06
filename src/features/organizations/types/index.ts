@@ -6,6 +6,7 @@ export type Organization = Entity & {
   email: string;
   phone: string;
   info: string;
+  profileImage: string | null;
 };
 
 export type CreateOrganizationData = {
@@ -14,6 +15,7 @@ export type CreateOrganizationData = {
   email: string;
   phone: string;
   info: string;
+  profileImage?: string;
 };
 
 export type UpdateOrganizationData =

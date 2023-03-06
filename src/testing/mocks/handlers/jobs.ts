@@ -18,13 +18,26 @@ const getJobsHandler = rest.get(
       'organizationId'
     ) as string;
 
-    const jobs = db.job.findMany({
-      where: {
-        organizationId: {
-          equals: organizationId,
+    let jobs = [];
+
+    if (!organizationId) {
+      const take = req.url.searchParams.get('take') as string;
+
+      jobs = db.job.findMany({
+        take: Number(take),
+        orderBy: {
+          createdAt: 'desc',
         },
-      },
-    });
+      });
+    } else {
+      jobs = db.job.findMany({
+        where: {
+          organizationId: {
+            equals: organizationId,
+          },
+        },
+      });
+    }
 
     return res(ctx.delay(300), ctx.status(200), ctx.json(jobs));
   }

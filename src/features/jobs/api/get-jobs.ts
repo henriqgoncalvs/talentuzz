@@ -7,6 +7,7 @@ import { Job } from '../types';
 type GetJobsOptions = {
   params: {
     organizationId?: string;
+    take?: string;
   };
 };
 
@@ -22,7 +23,7 @@ export const useJobs = ({ params }: GetJobsOptions) => {
   const { data, isFetching, isFetched } = useQuery({
     queryKey: ['jobs', params],
     queryFn: () => getJobs({ params }),
-    enabled: !!params.organizationId,
+    enabled: !!params.organizationId || !!params.take,
     initialData: [],
   });
 
