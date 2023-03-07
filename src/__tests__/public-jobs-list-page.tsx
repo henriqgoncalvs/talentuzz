@@ -10,7 +10,7 @@ import {
 const jobs = testData.jobs;
 const organizations = testData.organizations;
 
-describe('#PAGE - Public Jobs Page', () => {
+describe('#PAGE - Public Jobs List Page', () => {
   it('should render the page with all the jobs', async () => {
     appRender(<PublicJobsPage />);
 
