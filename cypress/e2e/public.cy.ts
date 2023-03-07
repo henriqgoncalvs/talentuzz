@@ -56,6 +56,10 @@ describe('public application flow', () => {
       name: job.position,
     }).should('exist');
 
+    cy.findByRole('link', {
+      name: /apply/i,
+    }).should('exist');
+
     cy.findByText(new RegExp(job.info, 'i')).should('exist');
   });
 });

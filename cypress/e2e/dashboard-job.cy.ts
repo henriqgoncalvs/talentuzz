@@ -55,6 +55,10 @@ describe('dashboard job', () => {
       name: job.position,
     }).should('exist');
 
+    cy.findByRole('link', {
+      name: /view public job page/i,
+    }).should('exist');
+
     cy.findByText(new RegExp(job.info, 'i')).should('exist');
   });
 

@@ -30,6 +30,10 @@ describe('#PAGE - Dashboard Job Page', () => {
 
     const info = screen.getByText(job.info);
 
+    expect(
+      screen.getByRole('link', { name: /view public job page/i })
+    ).toBeInTheDocument();
+
     expect(jobPosition).toBeInTheDocument();
     expect(info).toBeInTheDocument();
   });

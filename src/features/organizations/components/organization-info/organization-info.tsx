@@ -136,7 +136,7 @@ export const OrganizationInfo = ({
         </HStack>
       </VStack>
 
-      <Heading as="h2" mt="7" mb="3" fontSize="2xl">
+      <Heading as="h2" pt="7" pb="3" fontSize="2xl">
         Description
       </Heading>
       <Content>{organization.info}</Content>

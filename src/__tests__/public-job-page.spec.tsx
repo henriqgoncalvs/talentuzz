@@ -3,8 +3,11 @@ import PublicJobPage, {
 } from '@/pages/organizations/[organizationId]/jobs/[jobId]';
 import { testData } from '@/testing/test-data';
 import { appRender, screen } from '@/testing/test-utils';
+
 const job = testData.jobs[0];
-const organization = testData.organizations[0];
+const organization = testData.organizations.find(
+  (org) => org.id === job.organizationId
+)!;
 
 describe('#PAGE - Public Job Page', () => {
   it('should use getServerSideProps that fetches and returns the proper data', async () => {
@@ -24,13 +27,27 @@ describe('#PAGE - Public Job Page', () => {
       <PublicJobPage organization={organization} job={job} />
     );
 
+    const organizationName = screen.getByText(organization.name);
+
     const jobPosition = screen.getByRole('heading', {
       name: job.position,
     });
+    const jobLocation = screen.getByText(job.position);
+    // const jobSalary = screen.getByText(job.salary);
+    // const jobType = screen.getByText(job.typeOfEmployment);
+    const jobPosted = screen.getByText(job.createdAt);
 
     const info = screen.getByText(job.info);
 
+    expect(
+      screen.getByRole('link', { name: /apply/i })
+    ).toBeInTheDocument();
+    expect(screen.getByLabelText(/share/i)).toBeInTheDocument();
+
+    expect(organizationName).toBeInTheDocument();
     expect(jobPosition).toBeInTheDocument();
+    expect(jobLocation).toBeInTheDocument();
+    expect(jobPosted).toBeInTheDocument();
     expect(info).toBeInTheDocument();
   });
 
