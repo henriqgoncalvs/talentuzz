@@ -10,7 +10,7 @@ type JobsListProps = {
 
 export const JobsList = ({ jobs, isLoading }: JobsListProps) => {
   return (
-    <Box mt="10" mx="auto" w="full">
+    <Box mt="10" mx="auto" w="full" data-testid="jobs-list">
       <Grid
         templateColumns={{
           base: 'repeat(1, 1fr)',

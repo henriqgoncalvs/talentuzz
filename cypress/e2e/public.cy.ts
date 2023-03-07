@@ -2,7 +2,9 @@ import { testData } from '../../src/testing/test-data';
 
 const organization = testData.organizations[0];
 
-const job = testData.jobs[0];
+const job = testData.jobs.filter(
+  (job) => job.organizationId === organization.id
+)[0];
 
 describe('public application flow', () => {
   it('should display the organization public page', () => {
@@ -35,14 +37,9 @@ describe('public application flow', () => {
 
     cy.findByTestId('jobs-list').should('exist');
 
-    cy.findByRole('row', {
-      name: new RegExp(
-        `${job.position} ${job.department} ${job.location} View`,
-        'i'
-      ),
-    }).within(() => {
+    cy.findByTestId(`job-card-${job.id}`).within(() => {
       cy.findByRole('link', {
-        name: /view/i,
+        name: /see more/i,
       }).click();
     });
 

@@ -90,6 +90,7 @@ export const JobCard = ({ job }: JobCardProps) => {
           href={`/organizations/${job.organization.id}/jobs/${job.id}`}
           variant="solid"
           w="full"
+          data-testid="job-card-see-more"
         >
           See more
         </Link>

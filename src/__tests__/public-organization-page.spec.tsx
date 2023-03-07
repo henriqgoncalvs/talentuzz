@@ -83,11 +83,6 @@ describe('#PAGE - Public Organization Page', () => {
         `/organizations/${job.organizationId}/jobs/${job.id}`
       );
     });
-    // checkTableValues({
-    //   container: screen.getByTestId('jobs-list'),
-    //   data: jobs,
-    //   columns: ['position', 'department', 'location'],
-    // });
   });
 
   it('should render the not found message if the organization is not found', async () => {
