@@ -38,7 +38,7 @@ export const OrganizationsList = ({
               />
             ))
           ) : (
-            <Text>No jobs found</Text>
+            <Text>No organizations found</Text>
           )}
         </Grid>
       </Box>
