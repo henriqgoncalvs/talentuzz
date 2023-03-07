@@ -1,5 +1,11 @@
-import { HStack, Skeleton, Text } from '@chakra-ui/react';
+import {
+  Center,
+  HStack,
+  Skeleton,
+  Text,
+} from '@chakra-ui/react';
 import Image from 'next/image';
+import { FaSuitcase } from 'react-icons/fa';
 
 import { Link } from '@/components/link';
 
@@ -30,18 +36,26 @@ export const OrganizationCard = ({
         textDecoration: 'none',
       }}
     >
-      <Image
-        src={
-          organization.profileImage ??
-          'https://via.placeholder.com/50'
-        }
-        alt={organization.name}
-        width="50"
-        height="50"
-        style={{
-          objectFit: 'cover',
-        }}
-      />
+      {organization.profileImage ? (
+        <Image
+          src={organization.profileImage}
+          alt={organization.name}
+          width="50"
+          height="50"
+          style={{
+            objectFit: 'cover',
+          }}
+        />
+      ) : (
+        <Center
+          border="1px solid black"
+          borderRadius="md"
+          w="50px"
+          h="50px"
+        >
+          <FaSuitcase fontSize="25px" />
+        </Center>
+      )}
 
       <Text fontWeight="bold">{organization.name}</Text>
     </HStack>
