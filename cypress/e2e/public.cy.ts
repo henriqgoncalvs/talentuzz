@@ -24,6 +24,10 @@ describe('public application flow', () => {
       name: organization.phone,
     }).should('exist');
 
+    cy.findByLabelText(/share/i).should('exist');
+
+    cy.findByRole('link', { name: /see jobs/i }).should('exist');
+
     cy.findByText(new RegExp(organization.info, 'i')).should(
       'exist'
     );

@@ -26,6 +26,12 @@ describe('#PAGE - Dashboard Organization Page', () => {
       name: organization.phone,
     });
 
+    expect(
+      screen.getByRole('link', {
+        name: /edit/i,
+      })
+    ).toBeInTheDocument();
+
     const info = screen.getByText(organization.info);
 
     expect(organizationName).toBeInTheDocument();

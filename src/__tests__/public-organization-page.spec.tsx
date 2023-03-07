@@ -53,6 +53,14 @@ describe('#PAGE - Public Organization Page', () => {
       })
     ).toBeInTheDocument();
 
+    expect(screen.getByLabelText(/share/i)).toBeInTheDocument();
+
+    expect(
+      screen.getByRole('link', {
+        name: /see jobs/i,
+      })
+    ).toBeInTheDocument();
+
     jobs.forEach((job) => {
       const jobCard = screen.getByTestId(`job-card-${job.id}`);
 

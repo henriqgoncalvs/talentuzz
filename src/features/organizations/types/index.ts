@@ -7,6 +7,7 @@ export type Organization = Entity & {
   phone: string;
   info: string;
   profileImage: string | null;
+  location: string;
 };
 
 export type CreateOrganizationData = {
