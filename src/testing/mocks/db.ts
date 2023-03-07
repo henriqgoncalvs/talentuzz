@@ -19,6 +19,7 @@ const models = {
     phone: String,
     info: String,
     profileImage: nullable(String),
+    location: String,
   },
   job: {
     id: primaryKey(uid),

@@ -3,6 +3,7 @@ import {
   HStack,
   Skeleton,
   Text,
+  VStack,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import { FaSuitcase } from 'react-icons/fa';
@@ -25,6 +26,7 @@ export const OrganizationCard = ({
       justifyContent="flex-start"
       w="full"
       maxW="md"
+      spacing="4"
       data-testid={`organization-card-${organization.id}`}
       border="1px solid black"
       p="3"
@@ -57,7 +59,14 @@ export const OrganizationCard = ({
         </Center>
       )}
 
-      <Text fontWeight="bold">{organization.name}</Text>
+      <VStack spacing="1" alignItems="flex-start">
+        <Text fontWeight="bold">{organization.name}</Text>
+        <Text fontSize="sm" color="gray.500" fontWeight="normal">
+          {organization.location.length > 17
+            ? `${organization.location.substring(0, 16)}...`
+            : organization.location}
+        </Text>
+      </VStack>
     </HStack>
   );
 };
