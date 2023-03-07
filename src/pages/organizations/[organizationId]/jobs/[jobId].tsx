@@ -5,7 +5,6 @@ import {
 } from 'next';
 import { ReactElement } from 'react';
 
-import { Link } from '@/components/link';
 import { NotFound } from '@/components/not-found';
 import { Seo } from '@/components/seo';
 import { getJob, PublicJobInfo } from '@/features/jobs';
@@ -34,18 +33,6 @@ export const PublicJobPage = ({
       <Seo title={`${job.position} | ${job.location}`} />
       <Stack w="full">
         <PublicJobInfo job={job} organization={organization} />
-        <Link
-          variant="solid"
-          _hover={{
-            opacity: '0.9',
-          }}
-          as="a"
-          href={`mailto:${organization?.email}?subject=
- Application for ${job.position} position`}
-          target="_blank"
-        >
-          Apply
-        </Link>
       </Stack>
     </>
   );
