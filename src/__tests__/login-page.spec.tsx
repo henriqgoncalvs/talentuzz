@@ -6,7 +6,7 @@ import {
 } from '@/testing/test-utils';
 
 const credentials = {
-  email: 'user1@test.com',
+  email: 'admin1@test.com',
   password: 'password',
 };
 

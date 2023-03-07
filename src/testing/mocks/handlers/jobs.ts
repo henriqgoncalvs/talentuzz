@@ -17,14 +17,50 @@ const getJobsHandler = rest.get(
     const organizationId = req.url.searchParams.get(
       'organizationId'
     ) as string;
+    const includes =
+      (req.url.searchParams.get('includes') as string) &&
+      (JSON.parse(
+        req.url.searchParams.get('includes') as string
+      ) as string[]);
 
-    const jobs = db.job.findMany({
-      where: {
-        organizationId: {
-          equals: organizationId,
+    let jobs = [];
+
+    if (!organizationId) {
+      const take = req.url.searchParams.get('take') as string;
+
+      jobs = db.job.findMany({
+        take: Number(take),
+        orderBy: {
+          createdAt: 'desc',
         },
-      },
-    });
+      });
+    } else {
+      jobs = db.job.findMany({
+        where: {
+          organizationId: {
+            equals: organizationId,
+          },
+        },
+      });
+    }
+
+    if (includes) {
+      jobs = jobs.map((job) => {
+        if (includes.includes('organization')) {
+          const organization = db.organization.findFirst({
+            where: {
+              id: {
+                equals: job.organizationId,
+              },
+            },
+          });
+
+          return { ...job, organization };
+        }
+
+        return job;
+      });
+    }
 
     return res(ctx.delay(300), ctx.status(200), ctx.json(jobs));
   }

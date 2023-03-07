@@ -8,6 +8,14 @@ const nextConfig = {
   experimental: {
     esmExternals: false,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;

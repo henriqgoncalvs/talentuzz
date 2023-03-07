@@ -5,7 +5,7 @@ export const NumbersInfoSection = () => {
     <HStack
       as="section"
       w="full"
-      my="20"
+      mt="20"
       justifyContent="space-between"
       spacing="0"
       position="relative"

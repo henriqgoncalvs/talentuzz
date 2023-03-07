@@ -6,7 +6,7 @@ import { Link } from '@/components/link';
 import { Loading } from '@/components/loading';
 import { Seo } from '@/components/seo';
 import { useUser } from '@/features/auth';
-import { JobsList, useJobs } from '@/features/jobs';
+import { DashboardJobsList, useJobs } from '@/features/jobs';
 import { DashboardLayout } from '@/layouts/dashboard-layout';
 
 const DashboardJobsPage = () => {
@@ -34,11 +34,9 @@ const DashboardJobsPage = () => {
           Create Job
         </Link>
       </HStack>
-      <JobsList
+      <DashboardJobsList
         jobs={jobs.data || []}
         isLoading={jobs.isLoading}
-        organizationId={user.data.organizationId}
-        type="dashboard"
       />
     </>
   );

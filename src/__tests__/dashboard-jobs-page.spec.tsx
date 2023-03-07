@@ -12,6 +12,10 @@ import {
   within,
 } from '@/testing/test-utils';
 
+const jobsFromUserOrganization = testData.jobs.filter(
+  (job) => job.organizationId === getUser().organizationId
+);
+
 jest.mock('@/features/auth', () => ({
   useUser: () => ({ data: getUser() }),
 }));
@@ -26,7 +30,7 @@ describe('#PAGE - Dashboard Jobs Page', () => {
 
     checkTableValues({
       container: screen.getByTestId('jobs-list'),
-      data: testData.jobs,
+      data: jobsFromUserOrganization,
       columns: ['position', 'department', 'location'],
     });
   });
@@ -38,7 +42,7 @@ describe('#PAGE - Dashboard Jobs Page', () => {
 
     await waitForLoadingToFinish();
 
-    const job = testData.jobs[0];
+    const job = jobsFromUserOrganization[0];
     const jobTableRow = screen.getByRole('row', {
       name: new RegExp(
         `${job.position} ${job.department} ${job.location} View`,

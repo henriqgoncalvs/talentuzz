@@ -1,102 +1,34 @@
-import { EditIcon } from '@chakra-ui/icons';
-import { Box } from '@chakra-ui/react';
+import { Box, Grid, Text } from '@chakra-ui/react';
 
-import {
-  DataTable,
-  DataTableProps,
-} from '@/components/data-table';
-import { Link } from '@/components/link';
+import { JobWithOrganization } from '../../types';
+import { JobCard } from '../job-card';
 
-import { Job } from '../../types';
-import { DeleteJobAlert } from '../delete-job-alert';
-
-type JobListType = 'dashboard' | 'public';
-
-export type JobsListProps = {
-  type: JobListType;
-  jobs: Job[];
+type JobsListProps = {
+  jobs: JobWithOrganization[];
   isLoading?: boolean;
-  organizationId: string;
 };
 
-const getTableColumns = (
-  organizationId: string,
-  type: JobListType
-) => {
-  const tableColumns: DataTableProps<Job>['columns'] = [
-    {
-      title: 'Position',
-      field: 'position',
-    },
-    {
-      title: 'Department',
-      field: 'department',
-    },
-    {
-      title: 'Location',
-      field: 'location',
-    },
-    {
-      title: '',
-      field: 'id',
-      render: ({ entry: { id } }: { entry: { id: string } }) => {
-        return (
-          <Link
-            href={
-              type === 'public'
-                ? `/organizations/${organizationId}/jobs/${id}`
-                : `/dashboard/jobs/${id}`
-            }
-          >
-            View
-          </Link>
-        );
-      },
-    },
-    {
-      title: '',
-      field: 'id',
-      show: type === 'dashboard',
-      render: ({ entry: { id } }: { entry: { id: string } }) => {
-        return (
-          <Link
-            href={`/dashboard/jobs/edit/${id}`}
-            icon={<EditIcon />}
-            variant="solid"
-          >
-            Edit
-          </Link>
-        );
-      },
-    },
-    {
-      title: '',
-      field: 'id',
-      show: type === 'dashboard',
-      render: ({ entry: { id } }: { entry: { id: string } }) => (
-        <DeleteJobAlert jobId={id} />
-      ),
-    },
-  ];
-
-  return tableColumns;
-};
-
-export const JobsList = ({
-  jobs,
-  isLoading,
-  organizationId,
-  type,
-}: JobsListProps) => {
-  const tableColumns = getTableColumns(organizationId, type);
-
+export const JobsList = ({ jobs, isLoading }: JobsListProps) => {
   return (
-    <Box data-testid="jobs-list">
-      <DataTable
-        isLoading={isLoading || false}
-        data={jobs}
-        columns={tableColumns}
-      />
+    <Box mt="10" mx="auto" w="full" data-testid="jobs-list">
+      <Grid
+        templateColumns={{
+          base: 'repeat(1, 1fr)',
+          md: 'repeat(2, 1fr)',
+          lg: 'repeat(3, 1fr)',
+        }}
+        gap="5"
+      >
+        {isLoading ? (
+          Array.from({ length: 6 }).map(() => (
+            <JobCard.Skeleton key={Math.random()} />
+          ))
+        ) : jobs.length ? (
+          jobs.map((job) => <JobCard key={job.id} job={job} />)
+        ) : (
+          <Text>No jobs found</Text>
+        )}
+      </Grid>
     </Box>
   );
 };

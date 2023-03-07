@@ -1,12 +1,19 @@
 import { ViewIcon } from '@chakra-ui/icons';
-import { Heading, HStack, VStack, Text } from '@chakra-ui/react';
+import { Heading, HStack, Text, VStack } from '@chakra-ui/react';
 
 import { Content } from '@/components/content';
 import { Link } from '@/components/link';
+import { Organization } from '@/features/organizations';
 
 import { Job } from '../../types';
 
-export const PublicJobInfo = ({ job }: { job: Job }) => {
+export const PublicJobInfo = ({
+  job,
+  organization,
+}: {
+  job: Job;
+  organization: Organization;
+}) => {
   return (
     <>
       <VStack pt="16" pb="4" spacing="8">
@@ -16,11 +23,11 @@ export const PublicJobInfo = ({ job }: { job: Job }) => {
           <Text>{job?.location}</Text>
         </HStack>
         <Link
-          href={`/organizations/${job?.organizationId}`}
+          href={`/organizations/${organization?.id}`}
           variant="outline"
           icon={<ViewIcon />}
         >
-          View More Jobs
+          View More Jobs from {organization?.name}
         </Link>
       </VStack>
       <Content>{job.info}</Content>

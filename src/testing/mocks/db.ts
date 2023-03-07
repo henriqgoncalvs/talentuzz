@@ -1,4 +1,4 @@
-import { factory, primaryKey } from '@mswjs/data';
+import { factory, nullable, primaryKey } from '@mswjs/data';
 
 import { uid } from '@/utils/uid';
 
@@ -18,6 +18,7 @@ const models = {
     email: String,
     phone: String,
     info: String,
+    profileImage: nullable(String),
   },
   job: {
     id: primaryKey(uid),

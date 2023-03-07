@@ -1,8 +1,14 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import '@testing-library/jest-dom/extend-expect';
 
 import { queryClient } from '@/lib/react-query';
 import { seedDb } from '@/testing/mocks/seed-db';
 import { server } from '@/testing/mocks/server';
+
+Object.defineProperty(window, 'scrollTo', {
+  value: () => {},
+  writable: true,
+});
 
 beforeAll(() => {
   server.listen({ onUnhandledRequest: 'error' });
