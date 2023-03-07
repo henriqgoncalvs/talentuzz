@@ -605,6 +605,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
           >
             <a
               class="chakra-button css-5pf8si"
+              data-testid="job-card-see-more"
               href="/organizations/ce9d7818-20ee-45d1-8c0a-1be5f6faf835/jobs/wS6UeppUQoiXGTzAI6XrM"
               type="button"
             >
@@ -693,6 +694,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
           >
             <a
               class="chakra-button css-5pf8si"
+              data-testid="job-card-see-more"
               href="/organizations/ce9d7818-20ee-45d1-8c0a-1be5f6faf835/jobs/Jkors1KGKA8Xk3-WIgKRW"
               type="button"
             >
@@ -781,6 +783,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
           >
             <a
               class="chakra-button css-5pf8si"
+              data-testid="job-card-see-more"
               href="/organizations/ce9d7818-20ee-45d1-8c0a-1be5f6faf835/jobs/2LJ_sgmy_880G9WivH5Hf"
               type="button"
             >
@@ -869,6 +872,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
           >
             <a
               class="chakra-button css-5pf8si"
+              data-testid="job-card-see-more"
               href="/organizations/ce9d7818-20ee-45d1-8c0a-1be5f6faf835/jobs/dY8Q5uXxRtyH55sxThr_B"
               type="button"
             >
@@ -957,6 +961,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
           >
             <a
               class="chakra-button css-5pf8si"
+              data-testid="job-card-see-more"
               href="/organizations/ce9d7818-20ee-45d1-8c0a-1be5f6faf835/jobs/fsOw03AoDm6do4udFZIbn"
               type="button"
             >
@@ -1045,6 +1050,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
           >
             <a
               class="chakra-button css-5pf8si"
+              data-testid="job-card-see-more"
               href="/organizations/ce9d7818-20ee-45d1-8c0a-1be5f6faf835/jobs/vyXO36A_L_fkPFVlAFGNm"
               type="button"
             >
