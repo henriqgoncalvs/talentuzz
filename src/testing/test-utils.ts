@@ -59,6 +59,7 @@ export const waitForLoadingToFinish = () => {
       const loaders = [
         ...screen.queryAllByTestId(/loading/i),
         ...screen.queryAllByText(/loading/i),
+        ...screen.queryAllByTestId(/skeleton/i),
       ];
 
       loaders.forEach((loader) =>

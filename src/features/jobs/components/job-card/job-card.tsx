@@ -23,7 +23,7 @@ type JobCardProps = {
 
 export const JobCard = ({ job }: JobCardProps) => {
   return (
-    <Card w="full" maxW="md">
+    <Card w="full" maxW="md" data-testid={`job-card-${job.id}`}>
       <CardHeader>
         <HStack justifyContent="space-between" w="full">
           <Center
@@ -50,21 +50,37 @@ export const JobCard = ({ job }: JobCardProps) => {
             )}
           </Center>
 
-          <Tag bg="secondary.500">{job.department}</Tag>
+          <Tag
+            bg="secondary.500"
+            data-testid="job-card-department"
+          >
+            {job.department}
+          </Tag>
         </HStack>
       </CardHeader>
 
       <CardBody>
         <VStack alignItems="flex-start" spacing="3">
-          <Text fontSize="sm" color="gray.400">
+          <Text
+            fontSize="sm"
+            color="gray.400"
+            data-testid="job-organization"
+          >
             {job.organization?.name || '--'}
           </Text>
-          <Text fontSize="3xl" fontWeight="bold" lineHeight="7">
+          <Text
+            fontSize="3xl"
+            fontWeight="bold"
+            lineHeight="7"
+            data-testid="job-card-position"
+          >
             {job.position}
           </Text>
           <HStack>
             <FaMapMarkerAlt />
-            <Text fontSize="sm">{job.location}</Text>
+            <Text fontSize="sm" data-testid="job-card-location">
+              {job.location}
+            </Text>
           </HStack>
         </VStack>
       </CardBody>
@@ -84,7 +100,7 @@ export const JobCard = ({ job }: JobCardProps) => {
 
 const JobCardSkeleton = () => {
   return (
-    <Card w="full" maxW="md">
+    <Card w="full" maxW="md" data-testid="skeleton">
       <CardHeader>
         <HStack justifyContent="space-between" w="full">
           <Skeleton
