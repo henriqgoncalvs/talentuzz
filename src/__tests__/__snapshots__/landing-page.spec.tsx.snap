@@ -526,6 +526,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
       >
         <div
           class="chakra-card css-104f0nn"
+          data-testid="job-card-wS6UeppUQoiXGTzAI6XrM"
         >
           <div
             class="chakra-card__header css-1sl53ol"
@@ -550,6 +551,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
               </div>
               <span
                 class="css-1it29nb"
+                data-testid="job-card-department"
               >
                 Product
               </span>
@@ -563,11 +565,13 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
             >
               <p
                 class="chakra-text css-zgbaaa"
+                data-testid="job-organization"
               >
                 Test Org 1
               </p>
               <p
                 class="chakra-text css-1ocm1mk"
+                data-testid="job-card-position"
               >
                 Product Manager
               </p>
@@ -589,6 +593,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
                 </svg>
                 <p
                   class="chakra-text css-itvw0n"
+                  data-testid="job-card-location"
                 >
                   London
                 </p>
@@ -600,7 +605,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
           >
             <a
               class="chakra-button css-5pf8si"
-              href="/job/wS6UeppUQoiXGTzAI6XrM"
+              href="/organizations/ce9d7818-20ee-45d1-8c0a-1be5f6faf835/jobs/wS6UeppUQoiXGTzAI6XrM"
               type="button"
             >
               See more
@@ -609,6 +614,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
         </div>
         <div
           class="chakra-card css-104f0nn"
+          data-testid="job-card-Jkors1KGKA8Xk3-WIgKRW"
         >
           <div
             class="chakra-card__header css-1sl53ol"
@@ -633,6 +639,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
               </div>
               <span
                 class="css-1it29nb"
+                data-testid="job-card-department"
               >
                 Design
               </span>
@@ -646,11 +653,13 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
             >
               <p
                 class="chakra-text css-zgbaaa"
+                data-testid="job-organization"
               >
                 Test Org 1
               </p>
               <p
                 class="chakra-text css-1ocm1mk"
+                data-testid="job-card-position"
               >
                 UI/UX Designer
               </p>
@@ -672,6 +681,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
                 </svg>
                 <p
                   class="chakra-text css-itvw0n"
+                  data-testid="job-card-location"
                 >
                   Belgrade
                 </p>
@@ -683,7 +693,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
           >
             <a
               class="chakra-button css-5pf8si"
-              href="/job/Jkors1KGKA8Xk3-WIgKRW"
+              href="/organizations/ce9d7818-20ee-45d1-8c0a-1be5f6faf835/jobs/Jkors1KGKA8Xk3-WIgKRW"
               type="button"
             >
               See more
@@ -692,6 +702,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
         </div>
         <div
           class="chakra-card css-104f0nn"
+          data-testid="job-card-2LJ_sgmy_880G9WivH5Hf"
         >
           <div
             class="chakra-card__header css-1sl53ol"
@@ -716,6 +727,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
               </div>
               <span
                 class="css-1it29nb"
+                data-testid="job-card-department"
               >
                 Engineering
               </span>
@@ -729,11 +741,13 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
             >
               <p
                 class="chakra-text css-zgbaaa"
+                data-testid="job-organization"
               >
                 Test Org 1
               </p>
               <p
                 class="chakra-text css-1ocm1mk"
+                data-testid="job-card-position"
               >
                 Software Engineer
               </p>
@@ -755,6 +769,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
                 </svg>
                 <p
                   class="chakra-text css-itvw0n"
+                  data-testid="job-card-location"
                 >
                   Berlin
                 </p>
@@ -766,7 +781,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
           >
             <a
               class="chakra-button css-5pf8si"
-              href="/job/2LJ_sgmy_880G9WivH5Hf"
+              href="/organizations/ce9d7818-20ee-45d1-8c0a-1be5f6faf835/jobs/2LJ_sgmy_880G9WivH5Hf"
               type="button"
             >
               See more
@@ -775,6 +790,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
         </div>
         <div
           class="chakra-card css-104f0nn"
+          data-testid="job-card-dY8Q5uXxRtyH55sxThr_B"
         >
           <div
             class="chakra-card__header css-1sl53ol"
@@ -799,6 +815,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
               </div>
               <span
                 class="css-1it29nb"
+                data-testid="job-card-department"
               >
                 Design
               </span>
@@ -812,11 +829,13 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
             >
               <p
                 class="chakra-text css-zgbaaa"
+                data-testid="job-organization"
               >
                 Test Org 1
               </p>
               <p
                 class="chakra-text css-1ocm1mk"
+                data-testid="job-card-position"
               >
                 UI/UX Designer
               </p>
@@ -838,6 +857,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
                 </svg>
                 <p
                   class="chakra-text css-itvw0n"
+                  data-testid="job-card-location"
                 >
                   San Francisco
                 </p>
@@ -849,7 +869,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
           >
             <a
               class="chakra-button css-5pf8si"
-              href="/job/dY8Q5uXxRtyH55sxThr_B"
+              href="/organizations/ce9d7818-20ee-45d1-8c0a-1be5f6faf835/jobs/dY8Q5uXxRtyH55sxThr_B"
               type="button"
             >
               See more
@@ -858,6 +878,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
         </div>
         <div
           class="chakra-card css-104f0nn"
+          data-testid="job-card-fsOw03AoDm6do4udFZIbn"
         >
           <div
             class="chakra-card__header css-1sl53ol"
@@ -882,6 +903,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
               </div>
               <span
                 class="css-1it29nb"
+                data-testid="job-card-department"
               >
                 Engineering
               </span>
@@ -895,11 +917,13 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
             >
               <p
                 class="chakra-text css-zgbaaa"
+                data-testid="job-organization"
               >
                 Test Org 1
               </p>
               <p
                 class="chakra-text css-1ocm1mk"
+                data-testid="job-card-position"
               >
                 Software Engineer
               </p>
@@ -921,6 +945,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
                 </svg>
                 <p
                   class="chakra-text css-itvw0n"
+                  data-testid="job-card-location"
                 >
                   Amsterdam
                 </p>
@@ -932,7 +957,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
           >
             <a
               class="chakra-button css-5pf8si"
-              href="/job/fsOw03AoDm6do4udFZIbn"
+              href="/organizations/ce9d7818-20ee-45d1-8c0a-1be5f6faf835/jobs/fsOw03AoDm6do4udFZIbn"
               type="button"
             >
               See more
@@ -941,6 +966,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
         </div>
         <div
           class="chakra-card css-104f0nn"
+          data-testid="job-card-vyXO36A_L_fkPFVlAFGNm"
         >
           <div
             class="chakra-card__header css-1sl53ol"
@@ -965,6 +991,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
               </div>
               <span
                 class="css-1it29nb"
+                data-testid="job-card-department"
               >
                 People
               </span>
@@ -978,11 +1005,13 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
             >
               <p
                 class="chakra-text css-zgbaaa"
+                data-testid="job-organization"
               >
                 Test Org 1
               </p>
               <p
                 class="chakra-text css-1ocm1mk"
+                data-testid="job-card-position"
               >
                 HR Manager
               </p>
@@ -1004,6 +1033,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
                 </svg>
                 <p
                   class="chakra-text css-itvw0n"
+                  data-testid="job-card-location"
                 >
                   San Francisco
                 </p>
@@ -1015,7 +1045,7 @@ exports[`#PAGE - Landing Page should display the landing page  1`] = `
           >
             <a
               class="chakra-button css-5pf8si"
-              href="/job/vyXO36A_L_fkPFVlAFGNm"
+              href="/organizations/ce9d7818-20ee-45d1-8c0a-1be5f6faf835/jobs/vyXO36A_L_fkPFVlAFGNm"
               type="button"
             >
               See more

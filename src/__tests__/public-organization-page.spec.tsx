@@ -3,19 +3,17 @@ import PublicOrganizationPage, {
   getServerSideProps,
 } from '@/pages/organizations/[organizationId]';
 import { testData } from '@/testing/test-data';
-import {
-  appRender,
-  checkTableValues,
-  screen,
-} from '@/testing/test-utils';
+import { appRender, screen, within } from '@/testing/test-utils';
 
 const organization = testData.organizations[0];
-const jobs: JobWithOrganization[] = testData.jobs.map((job) => ({
-  ...job,
-  organization: testData.organizations.find(
-    (org) => org.id === job.organizationId
-  )!,
-}));
+const jobs: JobWithOrganization[] = testData.jobs
+  .filter((job) => job.organizationId === organization.id)
+  .map((job) => ({
+    ...job,
+    organization: testData.organizations.find(
+      (org) => org.id === job.organizationId
+    )!,
+  }));
 
 describe('#PAGE - Public Organization Page', () => {
   it('should use getServerSideProps that fetches and returns the proper data', async () => {
@@ -55,11 +53,41 @@ describe('#PAGE - Public Organization Page', () => {
       })
     ).toBeInTheDocument();
 
-    checkTableValues({
-      container: screen.getByTestId('jobs-list'),
-      data: jobs,
-      columns: ['position', 'department', 'location'],
+    jobs.forEach((job) => {
+      const jobCard = screen.getByTestId(`job-card-${job.id}`);
+
+      const jobDepartment = within(jobCard).getByTestId(
+        'job-card-department'
+      );
+      const jobPosition = within(jobCard).getByTestId(
+        'job-card-position'
+      );
+      const jobLocation = within(jobCard).getByTestId(
+        'job-card-location'
+      );
+      const jobOrganization = within(jobCard).getByTestId(
+        'job-organization'
+      );
+      const jobApplyButton = within(jobCard).getByRole('link', {
+        name: /see more/i,
+      });
+
+      expect(jobDepartment.textContent).toBe(job.department);
+      expect(jobPosition.textContent).toBe(job.position);
+      expect(jobLocation.textContent).toBe(job.location);
+      expect(jobOrganization.textContent).toBe(
+        organization.name
+      );
+      expect(jobApplyButton).toHaveAttribute(
+        'href',
+        `/organizations/${job.organizationId}/jobs/${job.id}`
+      );
     });
+    // checkTableValues({
+    //   container: screen.getByTestId('jobs-list'),
+    //   data: jobs,
+    //   columns: ['position', 'department', 'location'],
+    // });
   });
 
   it('should render the not found message if the organization is not found', async () => {
