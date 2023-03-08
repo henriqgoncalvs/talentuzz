@@ -111,8 +111,19 @@ export const PublicJobInfo = ({
           borderBottomColor="gray.300"
           p="3"
         >
+          <Text fontWeight="bold">Experience Level</Text>
+          <Text as="h3">{job.experienceLevel}</Text>
+        </HStack>
+        <HStack
+          w="full"
+          alignItems="center"
+          justifyContent="space-between"
+          borderBottom="1px solid"
+          borderBottomColor="gray.300"
+          p="3"
+        >
           <Text fontWeight="bold">Salary</Text>
-          <Text as="h3">--</Text>
+          <Text as="h3">{job.salaryRange}</Text>
         </HStack>
         <HStack
           w="full"
@@ -123,7 +134,7 @@ export const PublicJobInfo = ({
           p="3"
         >
           <Text fontWeight="bold">Job Type</Text>
-          <Text as="h3">--</Text>
+          <Text as="h3">{job.employmentType}</Text>
         </HStack>
         <HStack
           w="full"

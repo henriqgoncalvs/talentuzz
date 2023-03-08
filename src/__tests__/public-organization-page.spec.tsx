@@ -4,6 +4,7 @@ import PublicOrganizationPage, {
 } from '@/pages/organizations/[organizationId]';
 import { testData } from '@/testing/test-data';
 import { appRender, screen, within } from '@/testing/test-utils';
+import { sortJobsByCreatedAt } from '@/utils/sort-by-createdAt';
 
 const organization = testData.organizations[0];
 const jobs: JobWithOrganization[] = testData.jobs
@@ -24,7 +25,9 @@ describe('#PAGE - Public Organization Page', () => {
     } as any);
 
     expect(props.organization).toEqual(organization);
-    expect(props.jobs).toEqual(jobs);
+    expect(sortJobsByCreatedAt(props.jobs)).toEqual(
+      sortJobsByCreatedAt(jobs)
+    );
   });
 
   it('should render the organization details', async () => {

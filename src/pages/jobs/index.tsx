@@ -30,9 +30,22 @@ import {
 import { PublicLayout } from '@/layouts/public-layout';
 
 const PublicJobsPage = () => {
-  const { data: jobs, isLoading } = useJobs({
+  const { filters } = useJobsFilters();
+
+  const {
+    data: jobs,
+    isLoading,
+    refetch,
+  } = useJobs({
     includes: ['organization'],
+    filters,
   });
+
+  useEffect(() => {
+    if (filters) {
+      refetch();
+    }
+  }, [filters, refetch]);
 
   return (
     <>
@@ -160,8 +173,8 @@ const PublicJobsPageHeader = () => {
             size="lg"
             disabled={!location && !position}
             onClick={() => {
-              if (position) addFilter('position', [position]);
-              if (location) addFilter('location', [location]);
+              addFilter('position', position ? [position] : []);
+              addFilter('location', location ? [location] : []);
             }}
           >
             Search

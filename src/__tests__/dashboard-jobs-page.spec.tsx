@@ -1,6 +1,9 @@
 import { waitFor } from '@testing-library/react';
+import { rest } from 'msw';
 
+import { API_URL } from '@/config/constants';
 import DashboardJobsPage from '@/pages/dashboard/jobs';
+import { server } from '@/testing/mocks/server';
 import { getUser } from '@/testing/mocks/utils';
 import { testData } from '@/testing/test-data';
 import {
@@ -22,6 +25,15 @@ jest.mock('@/features/auth', () => ({
 
 describe('#PAGE - Dashboard Jobs Page', () => {
   it('should render the jobs list', async () => {
+    server.use(
+      rest.get(`${API_URL}/jobs`, (req, res, ctx) => {
+        return res(
+          ctx.status(200),
+          ctx.json(jobsFromUserOrganization)
+        );
+      })
+    );
+
     appRender(<DashboardJobsPage />);
 
     await waitForLoadingToFinish();

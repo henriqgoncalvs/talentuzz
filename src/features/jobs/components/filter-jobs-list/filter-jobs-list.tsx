@@ -50,7 +50,9 @@ export const FilterJobsList = () => {
                   )
                 }
                 value={
-                  filters[key as keyof JobFilters] as string[]
+                  (filters[
+                    key as keyof JobFilters
+                  ] as string[]) || []
                 }
               >
                 {filter.options.map((option) => (

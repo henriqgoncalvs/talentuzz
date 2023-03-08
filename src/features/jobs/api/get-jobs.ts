@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 
 import { apiClient } from '@/lib/api-client';
 
-import { Job, JobWithOrganization } from '../types';
+import { Job, JobFilters, JobWithOrganization } from '../types';
 
 type GetJobsOptions = {
   params?: {
@@ -10,11 +10,13 @@ type GetJobsOptions = {
     take?: string;
   };
   includes?: string[];
+  filters?: JobFilters;
 };
 
 export const getJobs = ({
   params,
   includes,
+  filters,
 }: GetJobsOptions):
   | Promise<Job[]>
   | Promise<JobWithOrganization[]> => {
@@ -22,6 +24,7 @@ export const getJobs = ({
     params: {
       ...params,
       ...(includes && { includes: JSON.stringify(includes) }),
+      ...(filters && { filters: JSON.stringify(filters) }),
     },
   });
 };
@@ -29,10 +32,11 @@ export const getJobs = ({
 export const useJobs = ({
   params,
   includes,
+  filters,
 }: GetJobsOptions) => {
-  const { data, isFetching, isFetched } = useQuery({
+  const { data, isFetching, isFetched, refetch } = useQuery({
     queryKey: ['jobs', params],
-    queryFn: () => getJobs({ params, includes }),
+    queryFn: () => getJobs({ params, includes, filters }),
     // enabled: !!params.organizationId || !!params.take,
     initialData: [],
   });
@@ -40,8 +44,10 @@ export const useJobs = ({
   return {
     data,
     isLoading: isFetching && !isFetched,
+    refetch,
   } as {
     data: Job[] | JobWithOrganization[];
     isLoading: boolean;
+    refetch: () => void;
   };
 };

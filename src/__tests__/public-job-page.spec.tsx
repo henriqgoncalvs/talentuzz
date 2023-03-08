@@ -34,7 +34,7 @@ describe('#PAGE - Public Job Page', () => {
     });
     const jobLocation = screen.getByText(job.position);
     // const jobSalary = screen.getByText(job.salary);
-    // const jobType = screen.getByText(job.typeOfEmployment);
+    // const jobType = screen.getByText(job.employmentType);
     const jobPosted = screen.getByText(job.createdAt);
 
     const info = screen.getByText(job.info);

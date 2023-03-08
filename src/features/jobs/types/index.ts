@@ -7,6 +7,9 @@ export type Job = Entity & {
   info: string;
   location: string;
   department: string;
+  employmentType: EmploymentType;
+  experienceLevel: ExperienceLevel;
+  salaryRange: SalaryRange;
 };
 
 export type JobWithOrganization = Job & {
@@ -15,12 +18,18 @@ export type JobWithOrganization = Job & {
 
 export type CreateJobData = Pick<
   Job,
-  'position' | 'department' | 'location' | 'info'
+  | 'position'
+  | 'department'
+  | 'location'
+  | 'info'
+  | 'employmentType'
+  | 'experienceLevel'
+  | 'salaryRange'
 >;
 
 export type UpdateJobData = Partial<CreateJobData>;
 
-type TypeOfEmployment =
+type EmploymentType =
   | 'full-time'
   | 'part-time'
   | 'freelance'
@@ -41,7 +50,7 @@ type SalaryRange =
   | '200-plus';
 
 export type JobFilters = {
-  typeOfEmployment?: TypeOfEmployment[];
+  employmentType?: EmploymentType[];
   experienceLevel?: ExperienceLevel[];
   salaryRange?: SalaryRange[];
   position?: string[];
