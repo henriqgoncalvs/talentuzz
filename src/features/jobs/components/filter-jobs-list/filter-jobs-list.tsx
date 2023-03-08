@@ -12,10 +12,9 @@ import {
 } from '@chakra-ui/react';
 import { useEffect } from 'react';
 
+import filtersObject from '../../data/filters-object';
 import { useJobsFilters } from '../../stores/jobs-filter';
 import { JobFilters } from '../../types';
-
-import filtersJSON from './filters.json';
 
 export const FilterJobsList = () => {
   const { filters, initFilters, addFilter } = useJobsFilters();
@@ -36,7 +35,7 @@ export const FilterJobsList = () => {
           w="full"
           defaultIndex={[0, 1, 2]}
         >
-          {Object.entries(filtersJSON).map(([key, filter]) => (
+          {Object.entries(filtersObject).map(([key, filter]) => (
             <FilterAccordionItem
               filterLabel={filter.label}
               key={key}

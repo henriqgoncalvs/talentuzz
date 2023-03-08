@@ -3,9 +3,13 @@ import { useForm } from 'react-hook-form';
 
 import { Button } from '@/components/button';
 import { InputField } from '@/components/form';
+import { SelectField } from '@/components/form/select-field';
 import { resolver, z } from '@/lib/schema-validator';
 
 import { useCreateJob } from '../../api/create-job';
+import employmentTypes from '../../data/employmentTypes.json';
+import experienceLevels from '../../data/experienceLevels.json';
+import salaryRanges from '../../data/salaryRanges.json';
 import { CreateJobData } from '../../types';
 
 const createJobFormSchema = z.object({
@@ -59,6 +63,27 @@ export const CreateJobForm = ({ onSuccess }: JobFormProps) => {
             required: 'Required',
           })}
           error={formState.errors['location']}
+        />
+        <SelectField
+          label={employmentTypes.label}
+          options={employmentTypes.options}
+          {...register('employmentType', {
+            required: 'Required',
+          })}
+        />
+        <SelectField
+          label={salaryRanges.label}
+          options={salaryRanges.options}
+          {...register('salaryRange', {
+            required: 'Required',
+          })}
+        />
+        <SelectField
+          label={experienceLevels.label}
+          options={experienceLevels.options}
+          {...register('experienceLevel', {
+            required: 'Required',
+          })}
         />
 
         <InputField
