@@ -1,6 +1,6 @@
 {
-  "typeOfEmployment": {
-    "label": "Type of Employment",
+  "employmentType": {
+    "label": "Employment Type",
     "options": [
       { "label": "Full Time", "value": "full-time" },
       { "label": "Part Time", "value": "part-time" },

@@ -1,0 +1,10 @@
+{
+  "label": "Employment Type",
+  "options": [
+    { "label": "Full Time", "value": "full-time" },
+    { "label": "Part Time", "value": "part-time" },
+    { "label": "Internship", "value": "internship" },
+    { "label": "Freelance", "value": "freelance" },
+    { "label": "Contract", "value": "contract" }
+  ]
+}

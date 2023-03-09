@@ -9,3 +9,4 @@ export * from './components/jobs-list';
 export * from './components/public-job-info';
 export * from './stores/jobs-filter';
 export * from './types';
+export * from './utils/format-job-data';

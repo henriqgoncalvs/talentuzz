@@ -1,3 +1,4 @@
+import { formatJobData } from '@/features/jobs';
 import PublicJobsPage from '@/pages/jobs';
 import { testData } from '@/testing/test-data';
 import {
@@ -34,6 +35,15 @@ describe('#PAGE - Public Jobs List Page', () => {
       const jobLocation = within(jobCard).getByTestId(
         'job-card-location'
       );
+      const jobExperienceLevel = within(jobCard).getByTestId(
+        'job-card-experience-level'
+      );
+      const jobSalaryRange = within(jobCard).getByTestId(
+        'job-card-salary-range'
+      );
+      const jobEmploymentType = within(jobCard).getByTestId(
+        'job-card-employment-type'
+      );
       const jobOrganization = within(jobCard).getByTestId(
         'job-organization'
       );
@@ -44,6 +54,15 @@ describe('#PAGE - Public Jobs List Page', () => {
       expect(jobDepartment.textContent).toBe(job.department);
       expect(jobPosition.textContent).toBe(job.position);
       expect(jobLocation.textContent).toBe(job.location);
+      expect(jobSalaryRange.textContent).toBe(
+        formatJobData(job.salaryRange, 'salaryRange')
+      );
+      expect(jobEmploymentType.textContent).toBe(
+        formatJobData(job.employmentType, 'employmentType')
+      );
+      expect(jobExperienceLevel.textContent).toBe(
+        formatJobData(job.experienceLevel, 'experienceLevel')
+      );
       expect(jobOrganization.textContent).toBe(
         organizations.find(
           (org) => org.id === job.organizationId

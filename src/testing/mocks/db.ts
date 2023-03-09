@@ -26,9 +26,12 @@ const models = {
     createdAt: Date.now,
     organizationId: String,
     position: String,
-    info: String,
+    info: nullable(String),
     location: String,
     department: String,
+    salaryRange: String,
+    employmentType: String,
+    experienceLevel: String,
   },
 };
 

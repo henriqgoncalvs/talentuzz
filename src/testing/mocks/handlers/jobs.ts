@@ -7,6 +7,7 @@
 import { rest } from 'msw';
 
 import { API_URL } from '@/config/constants';
+import { JobFilters } from '@/features/jobs';
 
 import { db } from '../db';
 import { requireAuth } from '../utils';
@@ -22,27 +23,55 @@ const getJobsHandler = rest.get(
       (JSON.parse(
         req.url.searchParams.get('includes') as string
       ) as string[]);
+    const filters =
+      (req.url.searchParams.get('filters') as string) &&
+      (JSON.parse(
+        req.url.searchParams.get('filters') as string
+      ) as JobFilters);
+    const take = req.url.searchParams.get('take') as string;
 
     let jobs = [];
 
-    if (!organizationId) {
-      const take = req.url.searchParams.get('take') as string;
-
-      jobs = db.job.findMany({
-        take: Number(take),
-        orderBy: {
-          createdAt: 'desc',
-        },
-      });
-    } else {
-      jobs = db.job.findMany({
-        where: {
+    jobs = db.job.findMany({
+      ...(take && { take: Number(take) }),
+      where: {
+        ...(organizationId && {
           organizationId: {
             equals: organizationId,
           },
-        },
-      });
-    }
+        }),
+        ...(filters && {
+          ...(filters.position && {
+            position: {
+              contains: filters.position[0],
+            },
+          }),
+          ...(filters.location && {
+            location: {
+              contains: filters.location[0],
+            },
+          }),
+          ...(filters.employmentType && {
+            employmentType: {
+              in: filters.employmentType,
+            },
+          }),
+          ...(filters.salaryRange && {
+            salaryRange: {
+              in: filters.salaryRange,
+            },
+          }),
+          ...(filters.experienceLevel && {
+            experienceLevel: {
+              in: filters.experienceLevel,
+            },
+          }),
+        }),
+      },
+      orderBy: {
+        createdAt: 'desc',
+      },
+    });
 
     if (includes) {
       jobs = jobs.map((job) => {

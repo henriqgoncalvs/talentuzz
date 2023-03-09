@@ -1,0 +1,9 @@
+{
+  "label": "Experience Level",
+  "options": [
+    { "label": "Student Level", "value": "student-level" },
+    { "label": "Entry Level", "value": "entry-level" },
+    { "label": "Mid Level", "value": "mid-level" },
+    { "label": "Senior Level", "value": "senior-level" }
+  ]
+}

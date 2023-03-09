@@ -14,8 +14,10 @@ import { RxShare1 } from 'react-icons/rx';
 import { Content } from '@/components/content';
 import { Link } from '@/components/link';
 import { Organization } from '@/features/organizations';
+import { formatDate } from '@/utils/format-date';
 
 import { Job } from '../../types';
+import { formatJobData } from '../../utils/format-job-data';
 
 export const PublicJobInfo = ({
   job,
@@ -111,8 +113,26 @@ export const PublicJobInfo = ({
           borderBottomColor="gray.300"
           p="3"
         >
+          <Text fontWeight="bold">Experience Level</Text>
+          <Text as="h3">
+            {formatJobData(
+              job.experienceLevel,
+              'experienceLevel'
+            )}
+          </Text>
+        </HStack>
+        <HStack
+          w="full"
+          alignItems="center"
+          justifyContent="space-between"
+          borderBottom="1px solid"
+          borderBottomColor="gray.300"
+          p="3"
+        >
           <Text fontWeight="bold">Salary</Text>
-          <Text as="h3">--</Text>
+          <Text as="h3">
+            {formatJobData(job.salaryRange, 'salaryRange')}
+          </Text>
         </HStack>
         <HStack
           w="full"
@@ -123,7 +143,9 @@ export const PublicJobInfo = ({
           p="3"
         >
           <Text fontWeight="bold">Job Type</Text>
-          <Text as="h3">--</Text>
+          <Text as="h3">
+            {formatJobData(job.employmentType, 'employmentType')}
+          </Text>
         </HStack>
         <HStack
           w="full"
@@ -145,7 +167,7 @@ export const PublicJobInfo = ({
           p="3"
         >
           <Text fontWeight="bold">Posted</Text>
-          <Text as="h3">{job.createdAt}</Text>
+          <Text as="h3">{formatDate(job.createdAt)}</Text>
         </HStack>
       </VStack>
 

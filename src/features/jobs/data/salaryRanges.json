@@ -1,0 +1,10 @@
+{
+  "label": "Salary Range",
+  "options": [
+    { "label": "$0 to $30k", "value": "0-to-30" },
+    { "label": "$30k to $50k", "value": "30-to-50" },
+    { "label": "$50k to $100k", "value": "50-to-100" },
+    { "label": "$100k to $200k", "value": "100-to-200" },
+    { "label": "$200k+", "value": "200-plus" }
+  ]
+}

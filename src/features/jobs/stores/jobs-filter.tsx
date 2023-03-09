@@ -6,7 +6,7 @@ import { getQueryParams } from '@/utils/get-query-params';
 import { JobFilters } from '../types';
 
 export type JobsFilterStore = {
-  filters: JobFilters | null;
+  filters?: JobFilters;
   addFilter: (
     filterKey: keyof JobFilters,
     value: JobFilters[keyof JobFilters]
@@ -16,13 +16,18 @@ export type JobsFilterStore = {
 
 export const jobsFiltersStore = createStore<JobsFilterStore>(
   (set, get) => ({
-    filters: null,
+    filters: undefined,
     addFilter: (filterKey, value) => {
       const url = new URL(window.location.href);
       const searchParams = new URLSearchParams();
+
+      const prevFilters = get().filters;
+
+      delete (prevFilters as any)[filterKey];
+
       const nextFilters = {
-        ...get().filters,
-        [filterKey]: value,
+        ...prevFilters,
+        ...(value?.length && { [filterKey]: value }),
       };
 
       Object.entries(nextFilters).forEach(([key, value]) => {
@@ -35,11 +40,8 @@ export const jobsFiltersStore = createStore<JobsFilterStore>(
 
       window.history.pushState({}, '', url.toString());
 
-      set((state) => ({
-        filters: {
-          ...state.filters,
-          [filterKey]: value,
-        },
+      set(() => ({
+        filters: nextFilters,
       }));
     },
     initFilters: () => {

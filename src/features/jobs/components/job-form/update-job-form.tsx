@@ -4,12 +4,16 @@ import { useForm } from 'react-hook-form';
 
 import { Button } from '@/components/button';
 import { InputField } from '@/components/form';
+import { SelectField } from '@/components/form/select-field';
 import { Loading } from '@/components/loading';
 import { NotFound } from '@/components/not-found';
 import { resolver, z } from '@/lib/schema-validator';
 
 import { useJob } from '../../api/get-job';
 import { useUpdateJob } from '../../api/update-job';
+import employmentTypes from '../../data/employmentTypes.json';
+import experienceLevels from '../../data/experienceLevels.json';
+import salaryRanges from '../../data/salaryRanges.json';
 import { UpdateJobData } from '../../types';
 
 const updateJobFormSchema = z.object({
@@ -17,6 +21,9 @@ const updateJobFormSchema = z.object({
   department: z.string(),
   location: z.string(),
   info: z.string(),
+  employmentType: z.string(),
+  salaryRange: z.string(),
+  experienceLevel: z.string(),
 });
 
 type JobFormProps = {
@@ -79,6 +86,31 @@ export const UpdateJobForm = ({
             value: job.data.location,
           })}
           error={formState.errors['location']}
+        />
+
+        <SelectField
+          label={employmentTypes.label}
+          options={employmentTypes.options}
+          {...register('employmentType', {
+            required: 'Required',
+            value: job.data.employmentType,
+          })}
+        />
+        <SelectField
+          label={salaryRanges.label}
+          options={salaryRanges.options}
+          {...register('salaryRange', {
+            required: 'Required',
+            value: job.data.salaryRange,
+          })}
+        />
+        <SelectField
+          label={experienceLevels.label}
+          options={experienceLevels.options}
+          {...register('experienceLevel', {
+            required: 'Required',
+            value: job.data.experienceLevel,
+          })}
         />
 
         <InputField
