@@ -1,4 +1,4 @@
-import { Stack } from '@chakra-ui/react';
+import { Stack, Text, VStack } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
 
 import { Button } from '@/components/button';
@@ -50,6 +50,22 @@ export const LoginForm = ({ onSuccess }: LoginFormProps) => {
         })}
         error={formState.errors['password']}
       />
+
+      <VStack
+        fontSize="xs"
+        fontStyle="italic"
+        spacing="2"
+        color="gray.600"
+        alignItems="flex-start"
+      >
+        <Text>
+          Email: <code>admin1@test.com</code>
+        </Text>
+        <Text>
+          Password: <code>password</code>
+        </Text>
+      </VStack>
+
       <Button
         isLoading={login.isLoading}
         isDisabled={login.isLoading}
@@ -57,6 +73,12 @@ export const LoginForm = ({ onSuccess }: LoginFormProps) => {
       >
         Log in
       </Button>
+
+      <VStack alignItems="center" spacing="2">
+        <Text>Don&apos;t have an account?</Text>
+
+        <Button variant="link">Sign up</Button>
+      </VStack>
     </Stack>
   );
 };
