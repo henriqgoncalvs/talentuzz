@@ -11,11 +11,17 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import Image from 'next/image';
-import { FaMapMarkerAlt, FaSuitcase } from 'react-icons/fa';
+import {
+  FaDollarSign,
+  FaFileContract,
+  FaMapMarkerAlt,
+  FaSuitcase,
+} from 'react-icons/fa';
 
 import { Link } from '@/components/link';
 
 import { JobWithOrganization } from '../../types';
+import { formatJobData } from '../../utils/format-job-data';
 
 type JobCardProps = {
   job: JobWithOrganization;
@@ -50,12 +56,23 @@ export const JobCard = ({ job }: JobCardProps) => {
             )}
           </Center>
 
-          <Tag
-            bg="secondary.500"
-            data-testid="job-card-department"
-          >
-            {job.department}
-          </Tag>
+          <VStack>
+            <Tag
+              bg="secondary.500"
+              data-testid="job-card-department"
+            >
+              {job.department}
+            </Tag>
+            <Tag
+              bg="brand.500"
+              data-testid="job-card-department"
+            >
+              {formatJobData(
+                job.experienceLevel,
+                'experienceLevel'
+              )}
+            </Tag>
+          </VStack>
         </HStack>
       </CardHeader>
 
@@ -80,6 +97,21 @@ export const JobCard = ({ job }: JobCardProps) => {
             <FaMapMarkerAlt />
             <Text fontSize="sm" data-testid="job-card-location">
               {job.location}
+            </Text>
+          </HStack>
+          <HStack>
+            <FaDollarSign />
+            <Text fontSize="sm" data-testid="job-card-location">
+              {formatJobData(job.salaryRange, 'salaryRange')}
+            </Text>
+          </HStack>
+          <HStack>
+            <FaFileContract />
+            <Text fontSize="sm" data-testid="job-card-location">
+              {formatJobData(
+                job.employmentType,
+                'employmentType'
+              )}
             </Text>
           </HStack>
         </VStack>
