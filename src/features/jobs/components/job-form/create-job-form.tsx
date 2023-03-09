@@ -17,6 +17,9 @@ const createJobFormSchema = z.object({
   department: z.string(),
   location: z.string(),
   info: z.string(),
+  employmentType: z.string(),
+  salaryRange: z.string(),
+  experienceLevel: z.string(),
 });
 
 type JobFormProps = {
