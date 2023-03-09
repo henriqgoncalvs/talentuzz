@@ -1,4 +1,7 @@
-import { JobWithOrganization } from '@/features/jobs';
+import {
+  formatJobData,
+  JobWithOrganization,
+} from '@/features/jobs';
 import PublicOrganizationPage, {
   getServerSideProps,
 } from '@/pages/organizations/[organizationId]';
@@ -76,6 +79,15 @@ describe('#PAGE - Public Organization Page', () => {
       const jobLocation = within(jobCard).getByTestId(
         'job-card-location'
       );
+      const jobExperienceLevel = within(jobCard).getByTestId(
+        'job-card-experience-level'
+      );
+      const jobSalaryRange = within(jobCard).getByTestId(
+        'job-card-salary-range'
+      );
+      const jobEmploymentType = within(jobCard).getByTestId(
+        'job-card-employment-type'
+      );
       const jobOrganization = within(jobCard).getByTestId(
         'job-organization'
       );
@@ -86,6 +98,15 @@ describe('#PAGE - Public Organization Page', () => {
       expect(jobDepartment.textContent).toBe(job.department);
       expect(jobPosition.textContent).toBe(job.position);
       expect(jobLocation.textContent).toBe(job.location);
+      expect(jobSalaryRange.textContent).toBe(
+        formatJobData(job.salaryRange, 'salaryRange')
+      );
+      expect(jobEmploymentType.textContent).toBe(
+        formatJobData(job.employmentType, 'employmentType')
+      );
+      expect(jobExperienceLevel.textContent).toBe(
+        formatJobData(job.experienceLevel, 'experienceLevel')
+      );
       expect(jobOrganization.textContent).toBe(
         organization.name
       );

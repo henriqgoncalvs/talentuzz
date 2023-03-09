@@ -1,8 +1,10 @@
+import { formatJobData } from '@/features/jobs';
 import PublicJobPage, {
   getServerSideProps,
 } from '@/pages/organizations/[organizationId]/jobs/[jobId]';
 import { testData } from '@/testing/test-data';
 import { appRender, screen } from '@/testing/test-utils';
+import { formatDate } from '@/utils/format-date';
 
 const job = testData.jobs[0];
 const organization = testData.organizations.find(
@@ -33,9 +35,18 @@ describe('#PAGE - Public Job Page', () => {
       name: job.position,
     });
     const jobLocation = screen.getByText(job.position);
-    // const jobSalary = screen.getByText(job.salary);
-    // const jobType = screen.getByText(job.employmentType);
-    const jobPosted = screen.getByText(job.createdAt);
+    const jobSalaryRange = screen.getByText(
+      formatJobData(job.salaryRange, 'salaryRange')
+    );
+    const jobEmploymentType = screen.getByText(
+      formatJobData(job.employmentType, 'employmentType')
+    );
+    const jobExperienceLevel = screen.getByText(
+      formatJobData(job.experienceLevel, 'experienceLevel')
+    );
+    const jobPosted = screen.getByText(
+      formatDate(job.createdAt)
+    );
 
     const info = screen.getByText(job.info);
 
@@ -48,6 +59,9 @@ describe('#PAGE - Public Job Page', () => {
     expect(jobPosition).toBeInTheDocument();
     expect(jobLocation).toBeInTheDocument();
     expect(jobPosted).toBeInTheDocument();
+    expect(jobSalaryRange).toBeInTheDocument();
+    expect(jobEmploymentType).toBeInTheDocument();
+    expect(jobExperienceLevel).toBeInTheDocument();
     expect(info).toBeInTheDocument();
   });
 

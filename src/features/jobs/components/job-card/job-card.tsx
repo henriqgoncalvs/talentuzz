@@ -65,7 +65,7 @@ export const JobCard = ({ job }: JobCardProps) => {
             </Tag>
             <Tag
               bg="brand.500"
-              data-testid="job-card-department"
+              data-testid="job-card-experience-level"
             >
               {formatJobData(
                 job.experienceLevel,
@@ -101,13 +101,19 @@ export const JobCard = ({ job }: JobCardProps) => {
           </HStack>
           <HStack>
             <FaDollarSign />
-            <Text fontSize="sm" data-testid="job-card-location">
+            <Text
+              fontSize="sm"
+              data-testid="job-card-salary-range"
+            >
               {formatJobData(job.salaryRange, 'salaryRange')}
             </Text>
           </HStack>
           <HStack>
             <FaFileContract />
-            <Text fontSize="sm" data-testid="job-card-location">
+            <Text
+              fontSize="sm"
+              data-testid="job-card-employment-type"
+            >
               {formatJobData(
                 job.employmentType,
                 'employmentType'
