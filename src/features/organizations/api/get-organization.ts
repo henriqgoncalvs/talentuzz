@@ -11,7 +11,7 @@ type GetOrganizationOptions = {
 export const getOrganization = ({
   organizationId,
 }: GetOrganizationOptions): Promise<Organization> => {
-  return apiClient.get(`/organizations/${organizationId}`);
+  return apiClient.get(`/organization/${organizationId}`);
 };
 
 export const useOrganization = ({

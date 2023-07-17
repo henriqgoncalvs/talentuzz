@@ -1,5 +1,6 @@
 export * from './api/get-job';
 export * from './api/get-jobs';
+export * from './api/get-jobs-with-organization';
 export * from './components/dashboard-job-info';
 export * from './components/dashboard-jobs-list';
 export * from './components/filter-jobs-list';

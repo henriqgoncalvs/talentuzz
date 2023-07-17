@@ -19,6 +19,8 @@ type LandingPageProps = InferGetStaticPropsType<
 >;
 
 const LandingPage = ({ latestJobs }: LandingPageProps) => {
+  console.log({ latestJobs });
+
   return (
     <>
       <Seo />
@@ -39,28 +41,38 @@ LandingPage.getLayout = function getLayout(page: ReactElement) {
 export const getStaticProps = async () => {
   const latestJobs = await getJobs({ params: { take: '6' } });
 
-  const organizationIds = Array.from(
-    new Set(latestJobs.map((job) => job.organizationId))
-  );
+  if (latestJobs) {
+    const organizationIds = Array.from(
+      new Set(latestJobs.map((job) => job.organizationId))
+    );
 
-  const organizations = await Promise.all(
-    organizationIds.map((id) =>
-      getOrganization({ organizationId: id })
-    )
-  );
+    const organizations = await Promise.all(
+      organizationIds.map((id) =>
+        getOrganization({ organizationId: id })
+      )
+    );
 
-  const latestJobsWithOrganization = latestJobs.map((job) => ({
-    ...job,
-    organization: organizations.find(
-      (org) => org.id === job.organizationId
-    )!,
-  }));
+    console.log({ organizationIds, organizations });
+
+    const latestJobsWithOrganization = latestJobs.map((job) => ({
+      ...job,
+      organization: organizations.find(
+        (org) => org.id === job.organizationId
+      )!,
+    }));
+
+    return {
+      props: {
+        latestJobs: latestJobsWithOrganization,
+      },
+      revalidate: 60,
+    };
+  }
 
   return {
     props: {
-      latestJobs: latestJobsWithOrganization,
+      latestJobs: [],
     },
-    revalidate: 60,
   };
 };
 

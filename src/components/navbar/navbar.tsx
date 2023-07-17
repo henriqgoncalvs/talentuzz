@@ -57,7 +57,7 @@ export const Navbar = () => {
               talentuzz
             </Link>
           </HStack>
-          {!user.isLoading && !user.data && (
+          {((!user.isLoading && !user.data) || user.isError) && (
             <HStack spacing="5">
               <Link variant="link" href="/jobs">
                 Find Jobs

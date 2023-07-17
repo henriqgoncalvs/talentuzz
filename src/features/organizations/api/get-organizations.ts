@@ -5,7 +5,7 @@ import { apiClient } from '@/lib/api-client';
 import { Organization } from '../types';
 
 export const getOrganizations = (): Promise<Organization[]> => {
-  return apiClient.get(`/organizations`);
+  return apiClient.get(`/organization`);
 };
 
 export const useOrganizations = () => {

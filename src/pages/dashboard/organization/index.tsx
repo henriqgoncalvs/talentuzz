@@ -13,7 +13,7 @@ import { DashboardLayout } from '@/layouts/dashboard-layout';
 const DashboardOrganizationPage = () => {
   const user = useUser();
   const { data: organizationData, isLoading } = useOrganization({
-    organizationId: user.data?.organizationId ?? '',
+    organizationId: user.data?.organization.id ?? '',
   });
 
   if (isLoading) {

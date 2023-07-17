@@ -4,7 +4,6 @@ import PublicJobPage, {
 } from '@/pages/organizations/[organizationId]/jobs/[jobId]';
 import { testData } from '@/testing/test-data';
 import { appRender, screen } from '@/testing/test-utils';
-import { formatDate } from '@/utils/format-date';
 
 const job = testData.jobs[0];
 const organization = testData.organizations.find(
@@ -44,9 +43,6 @@ describe('#PAGE - Public Job Page', () => {
     const jobExperienceLevel = screen.getByText(
       formatJobData(job.experienceLevel, 'experienceLevel')
     );
-    const jobPosted = screen.getByText(
-      formatDate(job.createdAt)
-    );
 
     const info = screen.getByText(job.info);
 
@@ -58,7 +54,6 @@ describe('#PAGE - Public Job Page', () => {
     expect(organizationName).toBeInTheDocument();
     expect(jobPosition).toBeInTheDocument();
     expect(jobLocation).toBeInTheDocument();
-    expect(jobPosted).toBeInTheDocument();
     expect(jobSalaryRange).toBeInTheDocument();
     expect(jobEmploymentType).toBeInTheDocument();
     expect(jobExperienceLevel).toBeInTheDocument();

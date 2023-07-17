@@ -16,7 +16,7 @@ import {
 } from '@/testing/test-utils';
 
 const jobsFromUserOrganization = testData.jobs.filter(
-  (job) => job.organizationId === getUser().organizationId
+  (job) => job.organizationId === getUser().organization.id
 );
 
 jest.mock('@/features/auth', () => ({
