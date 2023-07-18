@@ -52,21 +52,6 @@ export const LoginForm = ({ onSuccess }: LoginFormProps) => {
         error={formState.errors['password']}
       />
 
-      <VStack
-        fontSize="xs"
-        fontStyle="italic"
-        spacing="2"
-        color="gray.600"
-        alignItems="flex-start"
-      >
-        <Text>
-          Email: <code>admin1@test.com</code>
-        </Text>
-        <Text>
-          Password: <code>password</code>
-        </Text>
-      </VStack>
-
       <Button
         isLoading={login.isLoading}
         isDisabled={login.isLoading}
