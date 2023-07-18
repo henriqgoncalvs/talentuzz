@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 
 import { Button } from '@/components/button';
 import { InputField } from '@/components/form';
+import { Link } from '@/components/link';
 import { resolver, z } from '@/lib/schema-validator';
 
 import { useLogin } from '../../api/login';
@@ -77,7 +78,7 @@ export const LoginForm = ({ onSuccess }: LoginFormProps) => {
       <VStack alignItems="center" spacing="2">
         <Text>Don&apos;t have an account?</Text>
 
-        <Button variant="link">Sign up</Button>
+        <Link href="/auth/sign-up">Sign up</Link>
       </VStack>
     </Stack>
   );

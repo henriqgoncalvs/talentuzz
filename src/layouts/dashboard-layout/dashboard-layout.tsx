@@ -15,6 +15,8 @@ export const DashboardLayout = ({
 }: DashboardLayoutP) => {
   const user = useUser();
 
+  if (!user.data) return null;
+
   return (
     <Protected>
       <Navbar />
@@ -24,7 +26,7 @@ export const DashboardLayout = ({
         </Container>
         <Box py="8" textAlign="center">
           <Link
-            href={`/organizations/${user.data?.organizationId}`}
+            href={`/organizations/${user.data?.organization.id}`}
           >
             View Public Organization Page
           </Link>

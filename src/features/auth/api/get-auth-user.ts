@@ -4,15 +4,15 @@ import { apiClient } from '@/lib/api-client';
 
 import { AuthUser } from '../types';
 
-export const getAuthUser = (): Promise<AuthUser> => {
+export const getAuthUser = (): Promise<AuthUser | undefined> => {
   return apiClient.get('/auth/me');
 };
 
 export const useUser = () => {
-  const { data, isLoading } = useQuery({
+  const { data, isLoading, isError } = useQuery({
     queryKey: ['auth-user'],
-    queryFn: () => getAuthUser(),
+    queryFn: getAuthUser,
   });
 
-  return { data, isLoading };
+  return { data, isLoading, isError };
 };

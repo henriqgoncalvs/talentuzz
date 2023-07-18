@@ -13,7 +13,7 @@ const DashboardJobsPage = () => {
   const user = useUser();
   const jobs = useJobs({
     params: {
-      organizationId: user.data?.organizationId ?? '',
+      organizationId: user.data?.organization?.id ?? '',
     },
   });
 

@@ -19,7 +19,7 @@ export const AuthLayout = ({
   title,
 }: AuthLayoutProps) => {
   return (
-    <Center h="full">
+    <Center h="max-content" py="20">
       <Container maxW="lg">
         <Box p="8" bg="white" boxShadow="md" borderRadius="xl">
           <Stack spacing="6">

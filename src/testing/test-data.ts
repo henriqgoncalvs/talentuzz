@@ -79,14 +79,18 @@ const usersTestData: (AuthUser & { password: string })[] = [
     createdAt: 1645628972465,
     email: 'admin1@test.com',
     password: 'password',
-    organizationId: 'ce9d7818-20ee-45d1-8c0a-1be5f6faf835',
+    organization: {
+      id: 'ce9d7818-20ee-45d1-8c0a-1be5f6faf835',
+    },
   },
   {
     id: 'b3c7e2ea-1f46-4ecd-b920-ceb97039a274',
     createdAt: 1645628973145,
     email: 'admin2@test.com',
     password: 'password',
-    organizationId: '7160b259-bbec-463b-ae4a-6ad5be387890',
+    organization: {
+      id: '7160b259-bbec-463b-ae4a-6ad5be387890',
+    },
   },
 ];
 

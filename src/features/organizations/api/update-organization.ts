@@ -15,7 +15,7 @@ export const updateOrganization = ({
   data,
 }: UpdateOrganizationOptions): Promise<Organization> => {
   return apiClient.patch(
-    `/organizations/${organizationId}`,
+    `/organization/${organizationId}`,
     data
   );
 };

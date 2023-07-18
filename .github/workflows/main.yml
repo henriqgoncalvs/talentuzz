@@ -10,10 +10,10 @@ jobs:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
         with:
-          version: 7.9.0
+          version: 8.1.0
       - uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '18'
           cache: 'pnpm'
       - run: mv .env.example .env
       - run: pnpm i --frozen-lockfile
@@ -28,7 +28,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
         with:
-          version: 7.9.0
+          version: 8.1.0
       - run: mv .env.example .env
       - uses: cypress-io/github-action@v4
         with:

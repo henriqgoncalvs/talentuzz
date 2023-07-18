@@ -127,7 +127,7 @@ const createJobHandler = rest.post(
 
     const job = db.job.create({
       ...jobData,
-      organizationId: user?.organizationId,
+      organizationId: user?.organization.id,
     });
 
     return res(ctx.delay(300), ctx.status(201), ctx.json(job));

@@ -24,7 +24,7 @@ import {
   FilterJobsList,
   JobsList,
   JobWithOrganization,
-  useJobs,
+  useJobsWithOrganization,
   useJobsFilters,
 } from '@/features/jobs';
 import { PublicLayout } from '@/layouts/public-layout';
@@ -36,7 +36,7 @@ const PublicJobsPage = () => {
     data: jobs,
     isLoading,
     refetch,
-  } = useJobs({
+  } = useJobsWithOrganization({
     includes: ['organization'],
     filters,
   });

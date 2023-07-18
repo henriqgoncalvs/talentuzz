@@ -54,8 +54,10 @@ const logoutHandler = rest.post(
 const meHandler = rest.get(
   `${API_URL}/auth/me`,
   async (req, res, ctx) => {
-    const user = requireAuth({ req, shouldThrow: false });
-    return res(ctx.delay(300), ctx.json(user));
+    // const user = requireAuth({ req, shouldThrow: false });
+    // return res(ctx.delay(300), ctx.json(user));
+
+    return res(ctx.delay(300), ctx.status(401));
   }
 );
 

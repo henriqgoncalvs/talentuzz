@@ -14,7 +14,6 @@ import { RxShare1 } from 'react-icons/rx';
 import { Content } from '@/components/content';
 import { Link } from '@/components/link';
 import { Organization } from '@/features/organizations';
-import { formatDate } from '@/utils/format-date';
 
 import { Job } from '../../types';
 import { formatJobData } from '../../utils/format-job-data';
@@ -157,17 +156,6 @@ export const PublicJobInfo = ({
         >
           <Text fontWeight="bold">Location</Text>
           <Text as="h3">{job.location}</Text>
-        </HStack>
-        <HStack
-          w="full"
-          alignItems="center"
-          justifyContent="space-between"
-          borderBottom="1px solid"
-          borderBottomColor="gray.300"
-          p="3"
-        >
-          <Text fontWeight="bold">Posted</Text>
-          <Text as="h3">{formatDate(job.createdAt)}</Text>
         </HStack>
       </VStack>
 

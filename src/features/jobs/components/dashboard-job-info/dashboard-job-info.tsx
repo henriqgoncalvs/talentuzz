@@ -19,7 +19,7 @@ export const DashboardJobInfo = ({ job }: { job: Job }) => {
     <VStack>
       <VStack pt="16" pb="4" spacing="8">
         <Link
-          href={`/organizations/${user?.organizationId}/jobs/${job.id}`}
+          href={`/organizations/${user?.organization.id}/jobs/${job.id}`}
         >
           View Public Job Page
         </Link>
