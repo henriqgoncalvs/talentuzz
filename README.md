@@ -26,6 +26,10 @@
     <a href="https://talentuzz.hnqg.io" target="_blank">
         Deploy ↗︎
     </a>
+    <span>&nbsp;❖&nbsp;</span>
+    <a href="https://talentuzz-api.onrender.com/docs" target="_blank">
+        API Docs ↗︎
+    </a>
 </div>
 
 <div align="center">
@@ -70,6 +74,7 @@ A hiring platform for startups and the best professionals on the market.
 
 - [x] Landing page with general info about the platform.
 - [ ] The platform should be responsive.
+- [x] The platform should integrate with [Talentuzz API](https://github.com/hnqg/talentuzz-api)
 
 **Public user:**
 
@@ -81,7 +86,7 @@ A hiring platform for startups and the best professionals on the market.
 **Organization admin:**
 
 - [x] The admin can login.
-- [ ] The admin can register (soon) and create its organization.
+- [x] The admin can register (soon) and create its organization.
 - [x] The admin can see all the jobs of current organization.
 - [x] The admin can create/edit/delete a job.
 - [x] The admin can see the details of a job.
