@@ -26,7 +26,7 @@ export const DashboardLayout = ({
         </Container>
         <Box py="8" textAlign="center">
           <Link
-            href={`/organizations/${user.data?.organization.id}`}
+            href={`/organizations/${user.data?.organization?.id}`}
           >
             View Public Organization Page
           </Link>
