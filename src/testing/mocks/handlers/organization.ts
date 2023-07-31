@@ -5,7 +5,7 @@ import { API_URL } from '@/config/constants';
 import { db } from '../db';
 
 const getOrganizationsHandler = rest.get(
-  `${API_URL}/organizations`,
+  `${API_URL}/organization`,
   (req, res, ctx) => {
     const organizations = db.organization.getAll();
 
@@ -18,7 +18,7 @@ const getOrganizationsHandler = rest.get(
 );
 
 const getOrganizationHandler = rest.get(
-  `${API_URL}/organizations/:organizationId`,
+  `${API_URL}/organization/:organizationId`,
   (req, res, ctx) => {
     const organizationId = req.params.organizationId as string;
     const organization = db.organization.findFirst({
@@ -43,7 +43,7 @@ const getOrganizationHandler = rest.get(
 );
 
 const updateOrganizationHandler = rest.patch(
-  `${API_URL}/organizations/:organizationId`,
+  `${API_URL}/organization/:organizationId`,
   async (req, res, ctx) => {
     const organizationId = req.params.organizationId as string;
     const organizationData = await req.json();

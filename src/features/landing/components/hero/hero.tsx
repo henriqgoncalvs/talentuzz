@@ -1,5 +1,6 @@
 import {
   Center,
+  Flex,
   Heading,
   HStack,
   Text,
@@ -52,14 +53,27 @@ export const HeroSection = () => {
             The best place to discover & apply to the coolest
             startup jobs, without the black box.
           </Text>
-          <HStack spacing="5">
-            <Link href={'/jobs'} variant="solid">
+          <Flex
+            flexDir={{ base: 'column', md: 'row' }}
+            w="full"
+            alignItems="center"
+            gap="3"
+          >
+            <Link
+              href={'/jobs'}
+              variant="solid"
+              w={{ base: 'full', md: 'min-content' }}
+            >
               Find your next job
             </Link>
-            <Link href={'/dashboard/jobs'} variant="outline">
+            <Link
+              href={'/dashboard/jobs'}
+              variant="outline"
+              w={{ base: 'full', md: 'min-content' }}
+            >
               I&apos;m a startup
             </Link>
-          </HStack>
+          </Flex>
         </VStack>
         <VStack
           flex="1"
@@ -67,6 +81,7 @@ export const HeroSection = () => {
           minH="full"
           position="relative"
           transform="rotateY(-30deg) rotateZ(3deg) perspective(600px)"
+          display={{ base: 'none', lg: 'initial' }}
         >
           <VStack
             bg="brand.500"

@@ -28,7 +28,7 @@ export const JobsBarSection = () => {
     <Box
       position="relative"
       color="secondary.500"
-      h="60px"
+      h="min-content"
       as="section"
     >
       <HStack
@@ -36,13 +36,15 @@ export const JobsBarSection = () => {
         position="absolute"
         left="calc(-50vw + 50%)"
         width="100vw"
-        py="5"
+        py="8"
         px="5"
         textAlign="center"
         h="full"
         alignItems="center"
         justifyContent="space-between"
         spacing="5"
+        overflowX="scroll"
+        overflowY="hidden"
       >
         <JobBox icon={<RiPencilRuler2Fill />}>
           Product designer

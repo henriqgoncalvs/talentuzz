@@ -9,6 +9,7 @@ export const NumbersInfoSection = () => {
       justifyContent="space-between"
       spacing="0"
       position="relative"
+      flexDir={{ base: 'column', md: 'row' }}
       _before={{
         content: '""',
         position: 'absolute',
@@ -33,6 +34,7 @@ export const NumbersInfoSection = () => {
         flex="1"
         borderY="1px solid black"
         p="10"
+        w={{ base: 'full', md: 'initial' }}
       >
         <Heading mb="2">130K+</Heading>
         <Text>Tech Jobs</Text>
@@ -40,9 +42,10 @@ export const NumbersInfoSection = () => {
       <Center
         flexDirection="column"
         flex="1"
-        borderY="1px solid black"
-        borderX="1px solid black"
+        borderY={{ base: 'none', md: '1px solid black' }}
+        borderX={{ base: 'none', md: '1px solid black' }}
         p="10"
+        w={{ base: 'full', md: 'initial' }}
       >
         <Heading mb="2">6,000,000</Heading>
         <Text>Matches Made</Text>
@@ -52,6 +55,7 @@ export const NumbersInfoSection = () => {
         flex="1"
         borderY="1px solid black"
         p="10"
+        w={{ base: 'full', md: 'initial' }}
       >
         <Heading mb="2">8M+</Heading>
         <Text>Startup-ready candidates</Text>

@@ -1,5 +1,6 @@
 import {
   Center,
+  Flex,
   Heading,
   HStack,
   IconButton,
@@ -27,18 +28,19 @@ export const PublicJobInfo = ({
 }) => {
   return (
     <>
-      <Stack
+      <Flex
         w="full"
-        alignItems="center"
+        alignItems={{ base: 'flex-start', md: 'center' }}
         justifyContent="space-between"
         direction={{ base: 'column', md: 'row' }}
         p="7"
         border="1px solid black"
         bg="white"
         borderRadius="lg"
+        gap={7}
       >
         <VStack spacing="6" alignItems="flex-start">
-          <HStack alignItems="center" spacing="4">
+          <HStack alignItems="center" spacing="4" w="full">
             <Center
               bg="white"
               borderRadius="md"
@@ -75,9 +77,8 @@ export const PublicJobInfo = ({
           </VStack>
         </VStack>
 
-        <Stack
+        <HStack
           w={{ base: 'full', md: 'auto' }}
-          direction={{ base: 'column', md: 'row' }}
           alignItems="center"
           justifyContent="center"
           spacing="3"
@@ -100,8 +101,8 @@ export const PublicJobInfo = ({
           >
             Apply now
           </Link>
-        </Stack>
-      </Stack>
+        </HStack>
+      </Flex>
 
       <VStack w="full" mt="4">
         <HStack

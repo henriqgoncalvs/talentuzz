@@ -2,6 +2,7 @@ import {
   Box,
   Container,
   Divider,
+  Flex,
   Heading,
   HStack,
   Input,
@@ -61,18 +62,19 @@ const PublicJobsPage = () => {
         >
           <Text>Search results - {123}</Text>
           <Divider borderColor="gray.300" />
-          <HStack
+          <Flex
             w="full"
             alignItems="flex-start"
             justifyContent="space-between"
-            spacing="5"
+            gap={{ base: '0', md: '5' }}
+            flexDirection={{ base: 'column', md: 'row' }}
           >
             <FilterJobsList />
             <JobsList
               isLoading={isLoading}
               jobs={jobs as JobWithOrganization[]}
             />
-          </HStack>
+          </Flex>
         </VStack>
       </Container>
     </>
@@ -92,7 +94,11 @@ const PublicJobsPageHeader = () => {
   }, [filters]);
 
   return (
-    <Box textAlign="center" minH="50vh" position="relative">
+    <Box
+      textAlign="center"
+      minH={{ base: '60vh', md: '50vh' }}
+      position="relative"
+    >
       <VStack
         left="calc(-50vw + 50%)"
         top="-20"
@@ -106,7 +112,11 @@ const PublicJobsPageHeader = () => {
       >
         <Heading fontSize="7xl">
           Find your{' '}
-          <Text as="span" textDecor="underline">
+          <Text
+            as="span"
+            textDecor="underline"
+            wordBreak="break-word"
+          >
             dream job
           </Text>
         </Heading>
@@ -116,6 +126,7 @@ const PublicJobsPageHeader = () => {
           justifyContent="center"
           maxW="container.sm"
           gap="3"
+          display={{ base: 'none', md: 'flex' }}
         >
           {[
             'Product designer',
@@ -145,7 +156,11 @@ const PublicJobsPageHeader = () => {
           ))}
         </HStack>
 
-        <HStack pt="10">
+        <Flex
+          pt={{ base: '0', md: '10' }}
+          flexDir={{ base: 'column', md: 'row' }}
+          gap="3"
+        >
           <InputGroup size="lg" variant="filled">
             <InputLeftAddon>
               <FaCertificate />
@@ -179,7 +194,7 @@ const PublicJobsPageHeader = () => {
           >
             Search
           </Button>
-        </HStack>
+        </Flex>
       </VStack>
     </Box>
   );

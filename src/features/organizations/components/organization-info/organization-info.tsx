@@ -1,6 +1,7 @@
 import { EditIcon } from '@chakra-ui/icons';
 import {
   Center,
+  Flex,
   Heading,
   HStack,
   IconButton,
@@ -37,8 +38,9 @@ export const OrganizationInfo = ({
         border="1px solid black"
         bg="white"
         borderRadius="lg"
+        spacing="6"
       >
-        <VStack spacing="6" alignItems="flex-start">
+        <VStack spacing="6" alignItems="flex-start" w="full">
           <Center
             bg="white"
             borderRadius="md"
@@ -72,12 +74,12 @@ export const OrganizationInfo = ({
           </VStack>
         </VStack>
 
-        <Stack
+        <Flex
           w={{ base: 'full', md: 'auto' }}
-          direction={{ base: 'column', md: 'row' }}
+          direction="row"
           alignItems="center"
           justifyContent="center"
-          spacing="3"
+          gap="3"
           alignSelf={
             type === 'dashboard' ? 'flex-start' : 'flex-end'
           }
@@ -108,7 +110,7 @@ export const OrganizationInfo = ({
               </Link>
             </>
           )}
-        </Stack>
+        </Flex>
       </Stack>
 
       <VStack w="full" mt="4">

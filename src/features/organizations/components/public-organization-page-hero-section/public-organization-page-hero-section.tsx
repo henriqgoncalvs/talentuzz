@@ -1,5 +1,6 @@
 import {
   Center,
+  Flex,
   Heading,
   HStack,
   Text,
@@ -57,14 +58,18 @@ export const PublicOrganizationPageHeroSection = () => {
             Find jobs at any level of experience in a variety of
             industries at our 130k remote and local job listings.
           </Text>
-          <HStack spacing="5">
+          <Flex
+            flexDir={{ base: 'column', md: 'row' }}
+            gap={5}
+            w="full"
+          >
             <Link href={'/jobs'} variant="solid">
               Find your next job
             </Link>
             <Link href={'/dashboard/jobs'} variant="outline">
               I&apos;m a startup
             </Link>
-          </HStack>
+          </Flex>
         </VStack>
         <VStack
           flex="1"
@@ -72,6 +77,7 @@ export const PublicOrganizationPageHeroSection = () => {
           minH="full"
           position="relative"
           transform="rotateY(-20deg) rotateX(-5deg) rotateZ(1deg) perspective(600px)"
+          display={{ base: 'none', md: 'initial' }}
         >
           <VStack
             bg="white"

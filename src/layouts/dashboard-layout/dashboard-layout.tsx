@@ -15,8 +15,6 @@ export const DashboardLayout = ({
 }: DashboardLayoutP) => {
   const user = useUser();
 
-  if (!user.data) return null;
-
   return (
     <Protected>
       <Navbar />

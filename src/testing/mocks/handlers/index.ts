@@ -4,7 +4,7 @@ import { API_URL } from '@/config/constants';
 
 import { authHandlers } from './auth';
 import { jobsHandlers } from './jobs';
-import { organizationsHandlers } from './organizations';
+import { organizationsHandlers } from './organization';
 
 export const handlers = [
   ...authHandlers,

@@ -29,13 +29,18 @@ export const FindATalentSection = () => {
         h="full"
       >
         <Container maxW="container.lg">
-          <HStack w="full" alignItems="stretch" spacing="10">
+          <HStack
+            w="full"
+            alignItems="stretch"
+            spacing={{ base: '0', md: '10' }}
+          >
             <Box
               flex="1"
               w="full"
               minH="full"
               position="relative"
               border="3px solid white"
+              display={{ base: 'none', md: 'initial' }}
             >
               <Image
                 src="/assets/img/find-a-talent.webp"
@@ -78,6 +83,7 @@ export const FindATalentSection = () => {
                 href={'/dashboard/jobs'}
                 variant="solid"
                 boxShadow="5px 5px 0px white"
+                w={{ base: 'full', md: 'min-content' }}
               >
                 Start posting jobs
               </Link>

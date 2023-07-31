@@ -95,6 +95,31 @@ const getJobsHandler = rest.get(
   }
 );
 
+const getJobsWithOrganizationHandler = rest.get(
+  `${API_URL}/jobs-with-organization`,
+  async (req, res, ctx) => {
+    const take = req.url.searchParams.get('take') as string;
+
+    const jobsFromDb = db.job.findMany({
+      ...(take && { take: Number(take) }),
+    });
+
+    const jobs = jobsFromDb.map((job) => {
+      const organization = db.organization.findFirst({
+        where: {
+          id: {
+            equals: job.organizationId,
+          },
+        },
+      });
+
+      return { ...job, organization };
+    });
+
+    return res(ctx.delay(300), ctx.status(200), ctx.json(jobs));
+  }
+);
+
 const getJobHandler = rest.get(
   `${API_URL}/jobs/:jobId`,
   async (req, res, ctx) => {
@@ -176,6 +201,7 @@ const deleteJobHandler = rest.delete(
 
 export const jobsHandlers = [
   getJobsHandler,
+  getJobsWithOrganizationHandler,
   getJobHandler,
   createJobHandler,
   updateJobHandler,
