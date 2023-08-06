@@ -73,7 +73,7 @@ A hiring platform for startups and the best professionals on the market.
 **General**
 
 - [x] Landing page with general info about the platform.
-- [ ] The platform should be responsive.
+- [x] The platform should be responsive.
 - [x] The platform should integrate with [Talentuzz API](https://github.com/hnqg/talentuzz-api)
 
 **Public user:**
