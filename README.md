@@ -1,5 +1,5 @@
 <div align="center">
-<a href="https://talentuzz.hnqg.io">
+<a href="https://talentuzz.vercel.app">
 <img src="public/images/screenshot.png">
 </a>
 </div>
@@ -23,28 +23,18 @@
         Stack
     </a>
     <span>&nbsp;❖&nbsp;</span>
-    <a href="https://talentuzz.hnqg.io" target="_blank">
+    <a href="https://talentuzz.vercel.app" target="_blank">
         Deploy ↗︎
     </a>
     <span>&nbsp;❖&nbsp;</span>
-    <a href="https://talentuzz-api.onrender.com/docs" target="_blank">
+    <a href="https://talentuzz-api-production.up.railway.app/docs" target="_blank">
         API Docs ↗︎
     </a>
 </div>
 
-<div align="center">
-
-[![GitHub actions](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fhnqg%2Ftalentuzz%2Fbadge%3Fref%3Dmain&style=flat)](https://actions-badge.atrox.dev/hnqg/talentuzz/goto?ref=main)
-![GitHub stars](https://img.shields.io/github/stars/hnqg/talentuzz)
-![GitHub issues](https://img.shields.io/github/issues/hnqg/talentuzz)
-![GitHub forks](https://img.shields.io/github/forks/hnqg/talentuzz)
-![GitHub license](https://img.shields.io/github/license/hnqg/talentuzz)
-
-</div>
-
 ## ✌ Please don't forget to leave a star
 
-See more projects at my profile - [@hnqg](https://github.com/hnqg)
+See more projects at my profile - [@henriqgoncalvs](https://github.com/henriqgoncalvs)
 
 # Talentuzz
 
@@ -73,8 +63,8 @@ A hiring platform for startups and the best professionals on the market.
 **General**
 
 - [x] Landing page with general info about the platform.
-- [ ] The platform should be responsive.
-- [x] The platform should integrate with [Talentuzz API](https://github.com/hnqg/talentuzz-api)
+- [x] The platform should be responsive.
+- [x] The platform should integrate with [Talentuzz API](https://github.com/henriqgoncalvs/talentuzz-api)
 
 **Public user:**
 
@@ -91,25 +81,23 @@ A hiring platform for startups and the best professionals on the market.
 - [x] The admin can create/edit/delete a job.
 - [x] The admin can see the details of a job.
 - [x] The admin can see and edit the details of current organization.
-- [ ] The admin can write the job info with markdown.
-  - problems testing with RTL
 
 ## 🪐 Overview
 
-- [**/cypress/e2e**](https://github.com/hnqg/talentuzz/tree/main/cypress/e2e) - E2E tests.
-- [**/src/**tests\*\*\*\*](https://github.com/hnqg/talentuzz/tree/main/src/__tests__) - Integration tests.
-- [**/src/components**](https://github.com/hnqg/talentuzz/tree/main/src/components) - All sharable components with Storybook stories.
-- [**/src/config/constants.ts**](https://github.com/hnqg/talentuzz/tree/main/src/config/constants.ts) - All project constants, mostly a "wrapper" for env variables.
-- [**/src/layouts**](https://github.com/hnqg/talentuzz/tree/main/src/layouts) - Auth, Dashboard and Public layout components.
-- [**/src/lib**](https://github.com/hnqg/talentuzz/tree/main/src/lib) - Wrapper for custom configuration and use of external libraries.
-- [**/src/providers**](https://github.com/hnqg/talentuzz/blob/main/src/providers) - App provider with all system providers.
-- [**/src/stores**](https://github.com/hnqg/talentuzz/blob/main/src/stores) - Global stores.
-- [**/src/testing**](https://github.com/hnqg/talentuzz/blob/main/src/testing) - Jest config, test utils, msw configuration.
-- [**/src/testing/mocks/db.ts**](https://github.com/hnqg/talentuzz/blob/main/src/testing/mocks/db.ts) - Data modeling.
-- [**/src/testing/mocks/handlers**](https://github.com/hnqg/talentuzz/blob/main/src/testing/mocks/handlers) - API endpoints interceptors.
-- [**/src/theme**](https://github.com/hnqg/talentuzz/blob/main/src/theme) - Chakra UI theme. Global, components and foundations styles.
-- [**/src/utils**](https://github.com/hnqg/talentuzz/blob/main/src/utils) - Util functions.
-- [**/src/features**](https://github.com/hnqg/talentuzz/blob/main/src/features) - Auth, jobs, landing and organizations files.
+- [**/cypress/e2e**](https://github.com/henriqgoncalvs/talentuzz/tree/main/cypress/e2e) - E2E tests.
+- [**/src/**tests\*\*\*\*](https://github.com/henriqgoncalvs/talentuzz/tree/main/src/__tests__) - Integration tests.
+- [**/src/components**](https://github.com/henriqgoncalvs/talentuzz/tree/main/src/components) - All sharable components with Storybook stories.
+- [**/src/config/constants.ts**](https://github.com/henriqgoncalvs/talentuzz/tree/main/src/config/constants.ts) - All project constants, mostly a "wrapper" for env variables.
+- [**/src/layouts**](https://github.com/henriqgoncalvs/talentuzz/tree/main/src/layouts) - Auth, Dashboard and Public layout components.
+- [**/src/lib**](https://github.com/henriqgoncalvs/talentuzz/tree/main/src/lib) - Wrapper for custom configuration and use of external libraries.
+- [**/src/providers**](https://github.com/henriqgoncalvs/talentuzz/blob/main/src/providers) - App provider with all system providers.
+- [**/src/stores**](https://github.com/henriqgoncalvs/talentuzz/blob/main/src/stores) - Global stores.
+- [**/src/testing**](https://github.com/henriqgoncalvs/talentuzz/blob/main/src/testing) - Jest config, test utils, msw configuration.
+- [**/src/testing/mocks/db.ts**](https://github.com/henriqgoncalvs/talentuzz/blob/main/src/testing/mocks/db.ts) - Data modeling.
+- [**/src/testing/mocks/handlers**](https://github.com/henriqgoncalvs/talentuzz/blob/main/src/testing/mocks/handlers) - API endpoints interceptors.
+- [**/src/theme**](https://github.com/henriqgoncalvs/talentuzz/blob/main/src/theme) - Chakra UI theme. Global, components and foundations styles.
+- [**/src/utils**](https://github.com/henriqgoncalvs/talentuzz/blob/main/src/utils) - Util functions.
+- [**/src/features**](https://github.com/henriqgoncalvs/talentuzz/blob/main/src/features) - Auth, jobs, landing and organizations files.
   - **api** - API calls and custom hooks on top TanStack Query.
   - **data** - Information used in components and functions of the feature. (Usually a JSON)
   - **stores**
@@ -122,10 +110,10 @@ A hiring platform for startups and the best professionals on the market.
 
 ### **Project settings:**
 
-1. Clone or [fork](git@github.com:hnqg/talentuzz.git) the repository:
+1. Clone or [fork](git@github.com:henriqgoncalvs/talentuzz.git) the repository:
 
 ```bash
-git@github.com:hnqg/talentuzz.git
+git@github.com:henriqgoncalvs/talentuzz.git
 ```
 
 2. Install dependencies with your favorite package manager:
@@ -168,14 +156,14 @@ and open [http://localhost:3000](http://localhost:3000) 🚀.
 
 ## 😊 Contributing
 
-<a href="https://github.com/hnqg/talentuzz/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=hnqg/talentuzz" />
+<a href="https://github.com/henriqgoncalvs/talentuzz/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=henriqgoncalvs/talentuzz" />
 </a>
 
 <p></p>
 
 ## ☁ Deploy
 
-- **Vercel**: [https://talentuzz.hnqg.io](https://talentuzz.hnqg.io)
+- **Vercel**: [https://talentuzz.henriqgoncalvs.io](https://talentuzz.henriqgoncalvs.io)
 
-🐲 From [Henrique Gonçalves](https://github.com/hnqg) (or hnqg if you prefer), you can find me at [![Instagram Badge](https://img.shields.io/badge/Instagram-E4405F?logo=instagram&logoColor=white)](https://www.instagram.com/_hnqg/) [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/henriiqueg/)
+🐲 From [Henrique Gonçalves](https://github.com/henriqgoncalvs), you can find me at [![Instagram Badge](https://img.shields.io/badge/Instagram-E4405F?logo=instagram&logoColor=white)](https://www.instagram.com/_henriqgoncalvs/) [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/henriiqueg/)
